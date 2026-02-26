@@ -18,10 +18,10 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: "About Us", href: "#about" },
-        { name: "Our Sectors", href: "#sectors" },
-        { name: "CEO Message", href: "#ceo" },
-        { name: "Mission & Vision", href: "#vision" },
+        { name: "The Group", href: "/about" },
+        { name: "Sectors", href: "/#sectors" },
+        { name: "Intelligence", href: "/insights" },
+        { name: "Careers", href: "/careers" },
     ];
 
     return (
@@ -64,13 +64,12 @@ const Navbar = () => {
                                 </Link>
                             </motion.div>
                         ))}
-                        <motion.button
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            className="navy-gradient text-platinum px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-xl shadow-navy/20 hover:scale-[1.05] active:scale-95"
+                        <Link
+                            href="/contact"
+                            className="navy-gradient text-platinum px-8 py-3 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-xl shadow-navy/20 hover:scale-[1.05] active:scale-95 flex items-center justify-center"
                         >
                             Contact Office
-                        </motion.button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -107,12 +106,13 @@ const Navbar = () => {
                                 </Link>
                             ))}
                             <div className="pt-6">
-                                <button
+                                <Link
+                                    href="/contact"
                                     onClick={() => setIsOpen(false)}
-                                    className="w-full navy-gradient text-platinum py-5 rounded-2xl font-black uppercase tracking-widest shadow-2xl"
+                                    className="w-full navy-gradient text-platinum py-5 rounded-2xl font-black uppercase tracking-widest shadow-2xl flex items-center justify-center"
                                 >
                                     Contact Office
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </motion.div>

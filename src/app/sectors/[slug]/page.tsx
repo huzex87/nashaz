@@ -62,8 +62,8 @@ const SectorPage = () => {
                                 <sector.icon size={40} />
                             </div>
                             <h1 className="text-6xl md:text-8xl font-black text-platinum tracking-tighter uppercase leading-[0.85]">
-                                {sector.title}<br />
-                                <span className="italic" style={{ color: sector.color }}>Solutions.</span>
+                                {sector.title.split(' ')[0]} <br />
+                                <span className="italic" style={{ color: sector.color }}>{sector.title.split(' ').slice(1).join(' ') || "Solutions"}</span>
                             </h1>
                         </div>
                     </motion.div>
@@ -163,12 +163,13 @@ const SectorPage = () => {
                                             </div>
                                         ))}
                                     </div>
-                                    <button
-                                        className="w-full py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:scale-105 active:scale-95"
+                                    <Link
+                                        href={`/contact?sector=${encodeURIComponent(sector.title)}&color=${encodeURIComponent(sector.color)}`}
+                                        className="w-full py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center justify-center"
                                         style={{ backgroundColor: sector.color, color: sector.secondaryColor }}
                                     >
-                                        Request Portfolio
-                                    </button>
+                                        Connect Office
+                                    </Link>
                                 </div>
                             </motion.div>
 

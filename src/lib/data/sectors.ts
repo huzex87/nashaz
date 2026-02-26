@@ -18,6 +18,7 @@ export interface Subsidiary {
     longDescription?: string;
     features?: string[];
     stats?: { label: string; value: string }[];
+    projects?: { name: string; year: string; location: string; image: string }[];
 }
 
 export interface Sector {
@@ -49,7 +50,11 @@ export const sectors: Sector[] = [
                 description: "Premium residential estate development and management.",
                 longDescription: "NAHSAZ Properties Ltd is dedicated to delivering world-class residential solutions that combine luxury with functionality. Our estates are designed with sustainable infrastructure and modern amenities to provide an unparalleled living experience.",
                 features: ["Smart Home Integration", "Sustainable Eco-Design", "24/7 Premium Security", "Managed Facilities"],
-                stats: [{ label: "Estates Delivered", value: "12+" }, { label: "Happy Homeowners", value: "500+" }]
+                stats: [{ label: "Estates Delivered", value: "12+" }, { label: "Happy Homeowners", value: "500+" }],
+                projects: [
+                    { name: "The Platinum Heights", year: "2024", location: "Maitama, Abuja", image: "/images/platinum_heights_1772059769112.png" },
+                    { name: "Emerald Gardens", year: "2023", location: "Lekki, Lagos", image: "/images/emerald_gardens_1772059769112.png" }
+                ]
             },
             {
                 slug: "skyline-ventures",
@@ -57,7 +62,11 @@ export const sectors: Sector[] = [
                 description: "Commercial property leasing and strategic land acquisitions.",
                 longDescription: "Skyline Ventures specializes in the development and management of high-end commercial spaces. We provide strategic locations for businesses to thrive, offering flexible leasing options and state-of-the-art office environments.",
                 features: ["Prime Business Locations", "Flexible Lease Terms", "Industrial Grade Infrastructure", "Strategic Land Bank"],
-                stats: [{ label: "Commercial Space", value: "250k sqft" }, { label: "Corporate Clients", value: "45+" }]
+                stats: [{ label: "Commercial Space", value: "250k sqft" }, { label: "Corporate Clients", value: "45+" }],
+                projects: [
+                    { name: "NAHSAZ Corporate Tower", year: "2024", location: "Central Business District, Abuja", image: "/images/corporate_tower_1772059769112.png" },
+                    { name: "The Bridge Mall", year: "2022", location: "Asokoro, Abuja", image: "/images/bridge_mall_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -77,7 +86,11 @@ export const sectors: Sector[] = [
                 description: "Large-scale road, bridge, and industrial construction.",
                 longDescription: "NAHSAZ Civil & Infra is a leader in heavy construction and civil engineering. We specialize in building the infrastructure that powers Nigeria's growth, including national highways, bridges, and industrial estates.",
                 features: ["Heavy Engineering", "Bridge Construction", "Road Infrastructure", "Industrial Zoning"],
-                stats: [{ label: "Roads Built", value: "450km" }, { label: "Major Bridges", value: "8" }]
+                stats: [{ label: "Roads Built", value: "450km" }, { label: "Major Bridges", value: "8" }],
+                projects: [
+                    { name: "The Niger Link Bridge", year: "2023", location: "Delta State", image: "/images/niger_bridge_1772059769112.png" },
+                    { name: "Federal Highway 12 Expansion", year: "2024", location: "Kaduna-Kano", image: "/images/highway_12_1772059769112.png" }
+                ]
             },
             {
                 slug: "elite-structures",
@@ -85,7 +98,10 @@ export const sectors: Sector[] = [
                 description: "Specialized high-end residential and commercial building construction.",
                 longDescription: "Elite Structures focuses on the more intricate aspects of vertical construction. From luxury skyscrapers to boutique commercial hubs, we bring precision and architectural excellence to every project.",
                 features: ["High-Rise Expertise", "Architectural Concrete", "Structural Integrity", "Fast-Track Delivery"],
-                stats: [{ label: "Skyscrapers", value: "5" }, { label: "Safety Record", value: "100%" }]
+                stats: [{ label: "Skyscrapers", value: "5" }, { label: "Safety Record", value: "100%" }],
+                projects: [
+                    { name: "The Penthouse Regency", year: "2024", location: "Victoria Island, Lagos", image: "/images/penthouse_regency_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -105,7 +121,10 @@ export const sectors: Sector[] = [
                 description: "State-of-the-art laboratory and diagnostic imaging services.",
                 longDescription: "Providing the most accurate diagnostic data in West Africa, our medical diagnostics wing utilizes AI-driven imaging and fully automated labs to ensure timely and precise medical insights.",
                 features: ["AI Radiography", "Molecular Testing", "Tele-health Integration", "ISO Certified Labs"],
-                stats: [{ label: "Patients Served", value: "1M+" }, { label: "Accuracy Rate", value: "99.9%" }]
+                stats: [{ label: "Patients Served", value: "1M+" }, { label: "Accuracy Rate", value: "99.9%" }],
+                projects: [
+                    { name: "Regional Diagnostic Hub", year: "2024", location: "Enugu State", image: "/images/diagnostic_hub_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -125,7 +144,10 @@ export const sectors: Sector[] = [
                 description: "Solar farm development and off-grid community energy solutions.",
                 longDescription: "Solara Renewables is on a mission to electrify Nigeria using the power of the sun. We develop large-scale solar farms and micro-grids that bring sustainable energy to rural and urban communities alike.",
                 features: ["Solar Farm Operations", "Mini-Grid Solutions", "Energy Storage Systems", "Carbon Credit Trading"],
-                stats: [{ label: "Clean Energy", value: "50MW" }, { label: "Homes Powered", value: "15k" }]
+                stats: [{ label: "Clean Energy", value: "50MW" }, { label: "Homes Powered", value: "15k" }],
+                projects: [
+                    { name: "Kano Solar Array", year: "2024", location: "Kano State", image: "/images/kano_solar_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -145,7 +167,10 @@ export const sectors: Sector[] = [
                 description: "Mechanized crop production and livestock management.",
                 longDescription: "GreenField Agro is at the forefront of mechanized farming in Nigeria. We operate vast tracts of land using precision agriculture techniques to ensure high yields and sustainable food production.",
                 features: ["Precision Farming", "Mechanized Harvesting", "Livestock Optimization", "Seed Research"],
-                stats: [{ label: "Cultivated Land", value: "20k Hec" }, { label: "Export Grade", value: "95%" }]
+                stats: [{ label: "Cultivated Land", value: "20k Hec" }, { label: "Export Grade", value: "95%" }],
+                projects: [
+                    { name: "The Ag-Tech Hub", year: "2023", location: "Nasarawa State", image: "/images/agtech_hub_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -165,7 +190,10 @@ export const sectors: Sector[] = [
                 description: "Responsible extraction of solid minerals and rare earth metals.",
                 longDescription: "NAHSAZ Resources manages large-scale mining operations with a focus on lithium and gold. We employ best-in-class extraction technologies and rigorous environmental reclamation standards.",
                 features: ["Lithium Extraction", "Environmental Reclamation", "Community Mining Hubs", "Mineral Logistics"],
-                stats: [{ label: "Active Mines", value: "4" }, { label: "Community Jobs", value: "2k+" }]
+                stats: [{ label: "Active Mines", value: "4" }, { label: "Community Jobs", value: "2k+" }],
+                projects: [
+                    { name: "Lithium Valley Phase I", year: "2024", location: "Kogi State", image: "/images/lithium_valley_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -185,7 +213,10 @@ export const sectors: Sector[] = [
                 description: "Last-mile delivery and interstate haulage solutions.",
                 longDescription: "NAHSAZ Express is the fast-moving heart of our logistics network. We provide reliable delivery services across Nigeria, powered by a modern fleet and real-time tracking technology.",
                 features: ["Smart Fleet Management", "Cold Chain Logistics", "E-commerce Integration", "State-wide Coverage"],
-                stats: [{ label: "Deliveries/Day", value: "10k+" }, { label: "Reliability", value: "99.2%" }]
+                stats: [{ label: "Deliveries/Day", value: "10k+" }, { label: "Reliability", value: "99.2%" }],
+                projects: [
+                    { name: "West-Link Logistics Center", year: "2024", location: "Ogun State", image: "/images/logistics_center_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -205,7 +236,10 @@ export const sectors: Sector[] = [
                 description: "Sales of luxury, commercial, and industrial vehicles.",
                 longDescription: "NAHSAZ Motors represents multiple global brands in Nigeria, offering everything from heavy-duty industrial trucks to luxury passenger vehicles, backed by comprehensive warranties.",
                 features: ["After-Sales Support", "Warranty Protection", "Financing Partners", "Genuine Parts Only"],
-                stats: [{ label: "Units Sold", value: "5k+" }, { label: "Service Centers", value: "12" }]
+                stats: [{ label: "Units Sold", value: "5k+" }, { label: "Service Centers", value: "12" }],
+                projects: [
+                    { name: "NAHSAZ Flagship Showroom", year: "2024", location: "Abuja", image: "/images/showroom_1772059769112.png" }
+                ]
             }
         ]
     },
@@ -225,8 +259,11 @@ export const sectors: Sector[] = [
                 description: "Strategic business consulting and market entry strategy.",
                 longDescription: "NAHSAZ Advisory helps foreign and domestic investors navigate the Nigerian regulatory and economic landscape, providing data-driven entry strategies and risk assessments.",
                 features: ["Market Entry Strategy", "Regulatory Compliance", "Risk Management", "Business Intelligence"],
-                stats: [{ label: "Projects Completed", value: "120+" }, { label: "Client ROI", value: "220%" }]
+                stats: [{ label: "Projects Completed", value: "120+" }, { label: "Client ROI", value: "220%" }],
+                projects: [
+                    { name: "Global Trade Partnership", year: "2024", location: "International", image: "/images/consulting_1772059769112.png" }
+                ]
             }
         ]
-    },
+    }
 ];

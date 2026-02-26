@@ -7,6 +7,7 @@ import Image from "next/image";
 import { ArrowLeft, CheckCircle2, Trophy, Target, BarChart3, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
+import ProjectGallery from "@/components/subsidiaries/ProjectGallery";
 
 const SubsidiaryPage = () => {
     const { slug } = useParams();
@@ -78,7 +79,8 @@ const SubsidiaryPage = () => {
                                 style={{ color: themeColor }}
                             ></motion.span>
                             <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85] max-w-4xl">
-                                {subsidiary.name}
+                                {subsidiary.name.split(' ').slice(0, -1).join(' ')} <br />
+                                <span style={{ color: themeColor }}>{subsidiary.name.split(' ').slice(-1)}</span>
                             </h1>
                             <p className="text-xl md:text-2xl text-platinum/70 font-medium max-w-2xl mt-8">
                                 {subsidiary.description}
@@ -151,6 +153,13 @@ const SubsidiaryPage = () => {
                                     </motion.div>
                                 ))}
                             </div>
+
+                            {/* Project Gallery Integration */}
+                            <ProjectGallery
+                                projects={subsidiary.projects || []}
+                                themeColor={themeColor}
+                                subsidiaryName={subsidiary.name}
+                            />
                         </div>
 
                         {/* Lateral Sidebar */}
@@ -186,12 +195,13 @@ const SubsidiaryPage = () => {
                                     </div>
                                 </div>
 
-                                <button
-                                    className="w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs mt-12 transition-all shadow-xl hover:scale-[1.02] active:scale-95"
+                                <Link
+                                    href={`/contact?sector=${foundSector.title}&color=${encodeURIComponent(themeColor)}`}
+                                    className="w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs mt-12 transition-all shadow-xl hover:scale-[1.02] active:scale-95 flex items-center justify-center"
                                     style={{ backgroundColor: themeColor, color: foundSector.secondaryColor }}
                                 >
                                     Contact Business Office
-                                </button>
+                                </Link>
                             </motion.div>
                         </div>
                     </div>
