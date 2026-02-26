@@ -21,6 +21,7 @@ The NAHSAZ Group Corporate Platform is a world-class, professional digital repre
 ### Key Features
 *   **Dynamic Data Engine**: Centralized data structure (`src/lib/data/sectors.ts`) driving content across the homepage and deep-dive pages.
 *   **Sector Deep-Dives**: Programmatic dynamic routing (`/sectors/[slug]`) providing detailed insights into each business vertical.
+*   **Bespoke Subsidiary Ecosystem**: Specialized dynamic routing (`/subsidiaries/[slug]`) featuring entity-specific themes, performance metrics, and strategic mandates.
 *   **Premium Visual Depth**: Layered glassmorphism, advanced mesh gradients, and alternating background strategies to eliminate visual fatigue.
 *   **Cinematic Preloader**: A branded, status-driven entrance experience.
 *   **Sticky Anchor Navigation**: A persistent, logic-driven vertical nav for effortless section jumping.
