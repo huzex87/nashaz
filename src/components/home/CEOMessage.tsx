@@ -59,8 +59,7 @@ const CEOMessage = () => {
                                 Visionary Leadership
                             </motion.div>
                             <h2 className="text-5xl md:text-6xl font-black text-navy leading-tight tracking-tighter">
-                                A Message from Our <br />
-                                <span className="text-gold-gradient italic">Founder.</span>
+                                Founder&apos;s Message
                             </h2>
                         </div>
 
@@ -68,8 +67,8 @@ const CEOMessage = () => {
                             <Quote className="absolute -top-10 -left-12 text-gold opacity-10" size={120} />
                             <div className="space-y-8 text-xl text-navy/70 leading-relaxed font-semibold">
                                 <p className="text-2xl text-navy tracking-tight leading-snug">
-                                    "At NAHSAZ Group, our vision is to build a dependable business platform
-                                    that meets the strategic needs of individuals and institutions alike."
+                                    &quot;At NAHSAZ Group, our vision is to build a dependable business platform
+                                    that meets the strategic needs of individuals and institutions alike.&quot;
                                 </p>
                                 <div className="space-y-6 font-medium text-lg border-l-2 border-gold/20 pl-8">
                                     <p>

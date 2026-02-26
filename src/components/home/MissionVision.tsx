@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Target, Eye, Shield, Award, Users, Lightbulb } from "lucide-react";
+import { Target, Eye, Shield, Award, Lightbulb } from "lucide-react";
 
 const MissionVision = () => {
     const values = [
@@ -40,7 +40,7 @@ const MissionVision = () => {
                             <div className="space-y-4">
                                 <h3 className="text-4xl font-black text-navy tracking-tighter">Our <span className="text-gold-gradient">Vision</span></h3>
                                 <p className="text-2xl text-navy/70 leading-relaxed italic font-semibold">
-                                    "To build a dependable business platform that meets the everyday needs of individuals, businesses, and institutions."
+                                    &quot;To build a dependable business platform that meets the everyday needs of individuals, businesses, and institutions.&quot;
                                 </p>
                             </div>
                         </div>

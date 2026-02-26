@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowLeft, ChevronRight, CheckCircle2, Globe, ShieldCheck, Users2 } from "lucide-react";
@@ -10,7 +10,6 @@ import { sectors } from "@/lib/data/sectors";
 
 const SectorPage = () => {
     const { slug } = useParams();
-    const router = useRouter();
 
     const sector = sectors.find((s) => s.slug === slug);
 

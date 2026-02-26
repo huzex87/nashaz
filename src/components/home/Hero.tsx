@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight, ArrowUpRight, Play } from "lucide-react";
+import { ChevronRight, Play } from "lucide-react";
 
 const Hero = () => {
     return (

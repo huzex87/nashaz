@@ -4,15 +4,6 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-    Building2,
-    HardHat,
-    Stethoscope,
-    Zap,
-    Sprout,
-    Pickaxe,
-    Truck,
-    Car,
-    Briefcase,
     ArrowRight
 } from "lucide-react";
 

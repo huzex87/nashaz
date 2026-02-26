@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const sections = [
     { id: "hero", label: "Intro" },
@@ -53,16 +52,16 @@ export default function StickyAnchorNav() {
                 >
                     <span
                         className={`mr-4 text-[10px] uppercase font-black tracking-widest transition-all duration-300 ${activeSection === section.id
-                                ? "text-gold opacity-100 translate-x-0"
-                                : "text-navy opacity-0 translate-x-4 group-hover:opacity-40 group-hover:translate-x-0"
+                            ? "text-gold opacity-100 translate-x-0"
+                            : "text-navy opacity-0 translate-x-4 group-hover:opacity-40 group-hover:translate-x-0"
                             }`}
                     >
                         {section.label}
                     </span>
                     <div
                         className={`w-3 h-3 rounded-full border-2 transition-all duration-500 ${activeSection === section.id
-                                ? "bg-gold border-gold scale-125"
-                                : "bg-transparent border-navy/20 group-hover:border-gold group-hover:scale-110"
+                            ? "bg-gold border-gold scale-125"
+                            : "bg-transparent border-navy/20 group-hover:border-gold group-hover:scale-110"
                             }`}
                     />
                 </button>

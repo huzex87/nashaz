@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, ArrowRight, MessageSquare, MapPin } from "lucide-react";
+import { Mail, ArrowRight, MessageSquare, MapPin, ShieldCheck } from "lucide-react";
 
 const ContactCTA = () => {
     return (
@@ -30,7 +30,7 @@ const ContactCTA = () => {
                                     </span>
                                 </div>
                                 <h2 className="text-5xl md:text-7xl font-black text-navy leading-[0.9] tracking-tighter">
-                                    Let's Build the <br />
+                                    Let&apos;s Build the <br />
                                     <span className="text-gold-gradient">Future Together.</span>
                                 </h2>
                                 <p className="text-xl text-navy/60 font-medium leading-relaxed max-w-lg">
@@ -93,6 +93,5 @@ const ContactCTA = () => {
     );
 };
 
-import { ShieldCheck } from "lucide-react";
 
 export default ContactCTA;
