@@ -35,6 +35,8 @@ export const metadata: Metadata = {
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Preloader from "@/components/ui/Preloader";
+import PageTransition from "@/components/ui/PageTransition";
+import StickyAnchorNav from "@/components/ui/StickyAnchorNav";
 
 export default function RootLayout({
   children,
@@ -47,8 +49,11 @@ export default function RootLayout({
         className={`${outfit.variable} font-outfit antialiased bg-warm-platinum overflow-x-hidden`}
       >
         <Preloader />
+        <StickyAnchorNav />
         <Navbar />
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
         <Footer />
       </body>
     </html>

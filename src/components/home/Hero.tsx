@@ -7,7 +7,7 @@ import { ChevronRight, ArrowUpRight, Play } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center pt-20 overflow-hidden light-mesh">
+        <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden light-mesh">
             {/* Dynamic Background Elements - Softer for light theme */}
             <div className="absolute inset-0 opacity-40 pointer-events-none">
                 <div className="absolute top-[-10%] right-[-10%] w-[60%] h-[60%] bg-gold/10 rounded-full blur-[120px]"></div>
