@@ -1,26 +1,162 @@
 @import "tailwindcss";
 
+@theme {
+  --color-navy: #050C16;
+  --color-navy-light: #0A1525;
+  --color-gold: #C5A059;
+  --color-gold-light: #D4B781;
+  --color-gold-dark: #A68342;
+  --color-platinum: #F8F9FA;
+  --color-platinum-dark: #E9ECEF;
+  --color-warm-platinum: #FDFBFA;
+  --color-surface-muted: #F9F7F5;
+  --color-surface-soft: #F4F2F0;
+  --color-champagne: #F4EBD0;
+
+  --font-outfit: var(--font-outfit);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FDFBFA;
+  --foreground: #050C16;
+  --navy: #050C16;
+  --navy-light: #0A1525;
+  --gold: #C5A059;
+  --gold-gradient: linear-gradient(135deg, #C5A059 0%, #D4B781 50%, #A68342 100%);
+  --platinum: #F8F9FA;
+  --warm-platinum: #FDFBFA;
+  --surface-muted: #F9F7F5;
+  --surface-soft: #F4F2F0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #050C16;
+    --foreground: #F8F9FA;
+  }
+}
+*/
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-outfit), sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Premium Typography */
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Advanced Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+  box-shadow:
+    inset 0 0 40px rgba(255, 255, 255, 0.5),
+    0 20px 40px -20px rgba(5, 12, 22, 0.05);
+}
+
+.glass-dark {
+  background: rgba(5, 12, 22, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.15);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+}
+
+/* Gradients & Masks */
+.gold-gradient {
+  background: var(--gold-gradient);
+}
+
+.navy-gradient {
+  background: linear-gradient(135deg, #050C16 0%, #0A1525 100%);
+}
+
+.mesh-gradient {
+  background-color: #050c16;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(41, 48%, 56%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(41, 48%, 56%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(41, 48%, 56%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(41, 48%, 56%, 0.1) 0px, transparent 50%);
+}
+
+.light-mesh {
+  background-color: #fdfbfa;
+  background-image:
+    radial-gradient(at 0% 0%, hsla(41, 48%, 56%, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(216, 48%, 15%, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(41, 48%, 56%, 0.12) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(216, 48%, 15%, 0.05) 0px, transparent 50%);
+}
+
+/* Animation Utilities */
+@keyframes slow-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-slow-pan {
+  animation: slow-pan 20s linear infinite alternate;
+}
+
+/* Component Enhancements */
+.card-hover-gold {
+  @apply transition-all duration-500 hover:border-gold/40 hover:shadow-2xl hover:shadow-gold/5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply tracking-tighter font-bold;
+  color: var(--navy);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: var(--platinum);
+}
+
+::selection {
+  background: #C5A059;
+  color: #050C16;
 }
