@@ -8,6 +8,7 @@ import { ArrowLeft, ChevronRight, CheckCircle2, Globe, ShieldCheck, Users2 } fro
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
 
+
 const SectorPage = () => {
     const { slug } = useParams();
 

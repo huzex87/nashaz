@@ -30,6 +30,13 @@ export const metadata: Metadata = {
     locale: "en_NG",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "NAHSAZ Group | Powering Commerce. Delivering Solutions.",
+    description: "A diversified Nigerian conglomerate delivering integrated solutions across key sectors of the economy.",
+    images: ["/og-image.jpg"],
+  },
+
 };
 
 import Navbar from "@/components/layout/Navbar";
