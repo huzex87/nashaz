@@ -50,17 +50,20 @@ const SectorPage = () => {
                     >
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-platinum/60 hover:text-gold transition-colors text-xs font-black uppercase tracking-[0.3em] mb-4"
+                            className="inline-flex items-center gap-2 text-platinum/60 hover:text-white transition-colors text-xs font-black uppercase tracking-[0.3em] mb-4"
                         >
                             <ArrowLeft size={14} /> Back to Group
                         </Link>
                         <div className="flex items-center gap-6">
-                            <div className="w-20 h-20 rounded-2xl bg-gold text-navy flex items-center justify-center shadow-2xl">
+                            <div
+                                className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-2xl"
+                                style={{ backgroundColor: sector.color, color: sector.secondaryColor }}
+                            >
                                 <sector.icon size={40} />
                             </div>
                             <h1 className="text-6xl md:text-8xl font-black text-platinum tracking-tighter uppercase leading-[0.85]">
                                 {sector.title}<br />
-                                <span className="text-gold-gradient italic">Solutions.</span>
+                                <span className="italic" style={{ color: sector.color }}>Solutions.</span>
                             </h1>
                         </div>
                     </motion.div>
@@ -78,21 +81,21 @@ const SectorPage = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="glass-light p-12 rounded-[3rem] border border-gold/10"
+                                className="glass-light p-12 rounded-[3rem] border border-white/20 shadow-xl"
                             >
                                 <h2 className="text-3xl font-black text-navy mb-8 uppercase tracking-tight italic">Sector Vision</h2>
                                 <p className="text-2xl text-navy/70 leading-relaxed font-semibold mb-10">
                                     {sector.fullDescription}
                                 </p>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10 border-t border-gold/10">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10 border-t border-navy/5">
                                     {[
                                         { icon: ShieldCheck, label: "Compliance", val: "Global Std." },
                                         { icon: Users2, label: "Engagement", val: "Stakeholder" },
                                         { icon: Globe, label: "Reach", val: "Pan-Nigeria" },
                                     ].map((item, i) => (
                                         <div key={i} className="space-y-2">
-                                            <item.icon className="text-gold" size={24} />
+                                            <item.icon style={{ color: sector.color }} size={24} />
                                             <p className="text-navy font-black text-lg tracking-tighter">{item.val}</p>
                                             <p className="text-[10px] uppercase tracking-widest text-navy/40 font-bold">{item.label}</p>
                                         </div>
@@ -103,29 +106,32 @@ const SectorPage = () => {
                             {/* Subsidiaries */}
                             <div className="space-y-8">
                                 <h2 className="text-4xl font-black text-navy uppercase tracking-tighter ml-4">
-                                    Our <span className="text-gold-gradient">Subsidiaries.</span>
+                                    Our <span style={{ color: sector.color }}>Subsidiaries.</span>
                                 </h2>
                                 <div className="grid grid-cols-1 gap-6">
                                     {sector.subsidiaries.map((sub, i) => (
-                                        <motion.div
-                                            key={sub.name}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            whileInView={{ opacity: 1, x: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ delay: i * 0.1 }}
-                                            className="group glass p-8 rounded-[2rem] border border-gold/5 hover:border-gold/20 transition-all flex items-center justify-between"
-                                        >
-                                            <div className="flex items-center gap-6">
-                                                <div className="w-14 h-14 rounded-xl bg-navy/5 flex items-center justify-center group-hover:bg-gold transition-colors">
-                                                    <CheckCircle2 size={24} className="text-navy" />
+                                        <Link key={sub.slug} href={`/subsidiaries/${sub.slug}`}>
+                                            <motion.div
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: i * 0.1 }}
+                                                className="group glass p-8 rounded-[2rem] border border-navy/5 hover:border-gold/20 transition-all flex items-center justify-between"
+                                            >
+                                                <div className="flex items-center gap-6">
+                                                    <div
+                                                        className="w-14 h-14 rounded-xl bg-navy/5 flex items-center justify-center group-hover:scale-110 transition-all"
+                                                    >
+                                                        <CheckCircle2 size={24} style={{ color: sector.color }} />
+                                                    </div>
+                                                    <div>
+                                                        <h3 className="text-xl font-black text-navy uppercase">{sub.name}</h3>
+                                                        <p className="text-navy/50 font-medium text-sm">{sub.description}</p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <h3 className="text-xl font-black text-navy uppercase">{sub.name}</h3>
-                                                    <p className="text-navy/50 font-medium text-sm">{sub.description}</p>
-                                                </div>
-                                            </div>
-                                            <ChevronRight className="text-navy/20 group-hover:text-gold transition-colors" size={24} />
-                                        </motion.div>
+                                                <ChevronRight className="text-navy/20 group-hover:translate-x-1 transition-all" size={24} style={{ color: sector.color }} />
+                                            </motion.div>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
@@ -139,7 +145,10 @@ const SectorPage = () => {
                                 transition={{ delay: 0.4 }}
                                 className="navy-gradient p-10 rounded-[3rem] text-platinum shadow-2xl relative overflow-hidden group"
                             >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-bl-full group-hover:bg-gold/20 transition-colors"></div>
+                                <div
+                                    className="absolute top-0 right-0 w-32 h-32 opacity-10 rounded-bl-full group-hover:opacity-20 transition-all"
+                                    style={{ backgroundColor: sector.color }}
+                                ></div>
                                 <div className="relative z-10 space-y-10">
                                     <h3 className="text-xl font-black uppercase tracking-widest">Performance Track</h3>
                                     <div className="space-y-8">
@@ -149,18 +158,21 @@ const SectorPage = () => {
                                             { label: "Growth Index", val: "High" },
                                         ].map((stat, i) => (
                                             <div key={i} className="border-b border-platinum/10 pb-6 last:border-0 last:pb-0">
-                                                <p className="text-4xl font-black tracking-tighter text-gold-gradient">{stat.val}</p>
+                                                <p className="text-4xl font-black tracking-tighter" style={{ color: sector.color }}>{stat.val}</p>
                                                 <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mt-2">{stat.label}</p>
                                             </div>
                                         ))}
                                     </div>
-                                    <button className="w-full bg-platinum text-navy py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-gold transition-colors shadow-xl">
+                                    <button
+                                        className="w-full py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:scale-105 active:scale-95"
+                                        style={{ backgroundColor: sector.color, color: sector.secondaryColor }}
+                                    >
                                         Request Portfolio
                                     </button>
                                 </div>
                             </motion.div>
 
-                            <div className="glass-light p-8 rounded-[2rem] border border-gold/10">
+                            <div className="glass-light p-8 rounded-[2rem] border border-navy/5">
                                 <h4 className="text-navy font-black uppercase text-xs tracking-[0.3em] mb-4">Market Focus</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {["Domestic Growth", "Infrastructure", "Export Ready", "Innovation"].map(tag => (
