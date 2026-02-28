@@ -102,7 +102,7 @@ const Footer = () => {
                             <ul className="space-y-5">
                                 <li className="flex items-start gap-4 text-navy/40 text-sm font-medium">
                                     <MapPin className="text-gold/60 shrink-0" size={18} />
-                                    <span className="leading-relaxed">G-Kaduna River Close,<br />Maitama, Abuja, Nigeria</span>
+                                    <span className="leading-relaxed">6, Kaduna River Close,<br />Maitama, Abuja, Nigeria</span>
                                 </li>
                                 <li className="flex items-center gap-4 text-navy/40 text-sm font-medium">
                                     <Phone className="text-gold/60 shrink-0" size={18} />

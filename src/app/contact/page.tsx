@@ -12,7 +12,7 @@ const ContactContent = () => {
     const color = searchParams.get("color") || "#C5A059";
 
     const sidebarItems = [
-        { icon: MapPin, title: "Global Headquarters", detail: "G-Kaduna River Close, Maitama, Abuja, Nigeria" },
+        { icon: MapPin, title: "Global Headquarters", detail: "6, Kaduna River Close, Maitama, Abuja, Nigeria" },
         { icon: Phone, title: "Corporate Liaison", detail: "+234 (0) 800 NAHSAZ" },
         { icon: Mail, title: "Digital Correspondence", detail: "info@nashazgroup.com" },
         { icon: Clock, title: "Operating Hours", detail: "Mon - Fri: 08:00 - 18:00 WAT" },
