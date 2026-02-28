@@ -32,7 +32,7 @@ const milestones = [
     {
         year: "2026",
         title: "Royal Evolution",
-        desc: "Reimagining the group as a world-class conglomerates with 9 specialized sectors and a pan-African strategic outlook.",
+        desc: "Reimagining the group as a world-class conglomerate with 9 specialized sectors and a pan-African strategic outlook.",
         icon: Award
     }
 ];
@@ -42,9 +42,9 @@ const LegacyTimeline = () => {
         <section className="relative py-32 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center text-center mb-24 space-y-4">
-                    <History className="text-gold mb-4" size={32} />
-                    <h2 className="text-gold font-black uppercase tracking-[0.4em] text-[10px]">Corporate Narrative</h2>
-                    <h3 className="text-5xl md:text-7xl font-black text-navy uppercase tracking-tighter leading-none">
+                    <History className="text-navy/30 mb-4" size={32} />
+                    <h2 className="font-inter text-navy/40 font-bold uppercase tracking-[0.4em] text-[10px] !font-bold">Corporate Narrative</h2>
+                    <h3 className="font-display text-6xl md:text-8xl text-navy tracking-[0.04em] leading-none">
                         Our <br />
                         <span className="text-gold-gradient">Legacy.</span>
                     </h3>
@@ -53,7 +53,7 @@ const LegacyTimeline = () => {
                 <div className="relative">
                     {/* Vertical Line */}
                     <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-navy/10 to-transparent flex flex-col items-center">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_15px_rgba(197,160,89,0.5)] mb-4"></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-navy shadow-[0_0_15px_rgba(27,45,61,0.3)] mb-4"></div>
                     </div>
 
                     <div className="space-y-32">
@@ -67,11 +67,11 @@ const LegacyTimeline = () => {
                             >
                                 {/* Content Side */}
                                 <div className={`flex-1 ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'} space-y-4`}>
-                                    <span className="text-7xl md:text-9xl font-black text-navy/5 tracking-tighter opacity-50 block md:inline">
+                                    <span className="font-display text-8xl md:text-[10rem] text-navy/5 tracking-wide block md:inline leading-none">
                                         {item.year}
                                     </span>
-                                    <h4 className="text-3xl font-black text-navy uppercase tracking-tight">{item.title}</h4>
-                                    <p className="text-navy/50 font-medium max-w-md mx-auto md:mx-0 leading-relaxed">
+                                    <h4 className="font-display text-4xl text-navy tracking-[0.06em]">{item.title}</h4>
+                                    <p className="font-inter text-navy/50 font-medium max-w-md mx-auto md:mx-0 leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>

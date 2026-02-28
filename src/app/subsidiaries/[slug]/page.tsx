@@ -4,7 +4,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, CheckCircle2, Trophy, Target, BarChart3, ChevronRight } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Trophy, Target, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
 import ProjectGallery from "@/components/subsidiaries/ProjectGallery";
@@ -28,10 +28,10 @@ const SubsidiaryPage = () => {
     if (!subsidiary || !foundSector) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-warm-platinum px-4">
-                <h1 className="text-4xl font-black text-navy mb-6 uppercase tracking-tighter">Subsidiary Not Found</h1>
+                <h1 className="font-display text-5xl text-navy mb-6 tracking-[0.04em]">Subsidiary Not Found</h1>
                 <Link
                     href="/"
-                    className="navy-gradient text-platinum px-8 py-4 rounded-xl font-bold flex items-center gap-2"
+                    className="navy-gradient text-platinum px-8 py-4 rounded-xl font-inter font-bold flex items-center gap-2 tracking-wide"
                 >
                     <ArrowLeft size={18} /> Back to Homepage
                 </Link>
@@ -66,7 +66,7 @@ const SubsidiaryPage = () => {
                     >
                         <Link
                             href={`/sectors/${foundSector.slug}`}
-                            className="inline-flex items-center gap-2 text-platinum/50 hover:text-white transition-colors text-xs font-black uppercase tracking-[0.4em] mb-4"
+                            className="inline-flex items-center gap-2 text-platinum/50 hover:text-white transition-colors font-inter text-xs font-semibold uppercase tracking-[0.3em] mb-4"
                         >
                             <ArrowLeft size={14} /> Back to {foundSector.title}
                         </Link>
@@ -78,11 +78,11 @@ const SubsidiaryPage = () => {
                                 className="h-1 bg-current block mb-6"
                                 style={{ color: themeColor }}
                             ></motion.span>
-                            <h1 className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase leading-[0.85] max-w-4xl">
+                            <h1 className="font-display text-6xl md:text-9xl text-white tracking-[0.04em] leading-[0.85] max-w-4xl">
                                 {subsidiary.name.split(' ').slice(0, -1).join(' ')} <br />
                                 <span style={{ color: themeColor }}>{subsidiary.name.split(' ').slice(-1)}</span>
                             </h1>
-                            <p className="text-xl md:text-2xl text-platinum/70 font-medium max-w-2xl mt-8">
+                            <p className="font-inter text-xl md:text-2xl text-platinum/70 font-medium max-w-2xl mt-8">
                                 {subsidiary.description}
                             </p>
                         </div>
@@ -112,21 +112,21 @@ const SubsidiaryPage = () => {
                                     <div className="p-3 rounded-2xl bg-navy/5">
                                         <foundSector.icon size={32} style={{ color: themeColor }} />
                                     </div>
-                                    <h2 className="text-sm font-black uppercase tracking-[0.3em] text-navy/40">Division Overview</h2>
+                                    <h2 className="font-inter text-sm font-semibold uppercase tracking-[0.3em] text-navy/40">Division Overview</h2>
                                 </div>
 
-                                <p className="text-2xl md:text-3xl text-navy leading-snug font-bold mb-12 italic">
-                                    "{subsidiary.longDescription}"
+                                <p className="font-inter text-2xl md:text-3xl text-navy leading-snug font-bold mb-12 italic">
+                                    &quot;{subsidiary.longDescription}&quot;
                                 </p>
 
                                 {subsidiary.stats && (
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-navy/5">
                                         {subsidiary.stats.map((stat, i) => (
                                             <div key={i} className="space-y-1">
-                                                <p className="text-4xl font-black tracking-tighter" style={{ color: themeColor }}>
+                                                <p className="font-display text-5xl tracking-[0.04em]" style={{ color: themeColor }}>
                                                     {stat.value}
                                                 </p>
-                                                <p className="text-[10px] uppercase tracking-widest font-black text-navy/40">
+                                                <p className="font-inter text-[10px] uppercase tracking-[0.2em] font-semibold text-navy/40">
                                                     {stat.label}
                                                 </p>
                                             </div>
@@ -144,12 +144,12 @@ const SubsidiaryPage = () => {
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="bg-white p-8 rounded-[2.5rem] border border-navy/5 hover:border-gold/20 transition-all flex flex-col gap-6 group shadow-sm hover:shadow-xl"
+                                        className="bg-white p-8 rounded-[2.5rem] border border-navy/5 hover:border-navy/15 transition-all flex flex-col gap-6 group shadow-sm hover:shadow-xl"
                                     >
                                         <div className="w-12 h-12 rounded-2xl bg-navy/5 flex items-center justify-center group-hover:scale-110 transition-transform">
                                             <CheckCircle2 size={24} style={{ color: themeColor }} />
                                         </div>
-                                        <h3 className="text-xl font-black text-navy uppercase tracking-tight">{feature}</h3>
+                                        <h3 className="font-display text-2xl text-navy tracking-[0.04em]">{feature}</h3>
                                     </motion.div>
                                 ))}
                             </div>
@@ -172,8 +172,8 @@ const SubsidiaryPage = () => {
                             >
                                 <div className="space-y-12">
                                     <div className="space-y-2">
-                                        <h3 className="text-xs font-black uppercase tracking-[0.4em] opacity-50">Strategic Mandate</h3>
-                                        <h4 className="text-3xl font-black uppercase leading-none">Global Standards. Local Impact.</h4>
+                                        <h3 className="font-inter text-xs font-semibold uppercase tracking-[0.3em] opacity-50">Strategic Mandate</h3>
+                                        <h4 className="font-display text-4xl text-platinum tracking-[0.04em] leading-tight">Global Standards. Local Impact.</h4>
                                     </div>
 
                                     <div className="space-y-6">
@@ -187,8 +187,8 @@ const SubsidiaryPage = () => {
                                                     <item.icon size={20} style={{ color: themeColor }} />
                                                 </div>
                                                 <div>
-                                                    <p className="text-sm font-black uppercase tracking-tight">{item.title}</p>
-                                                    <p className="text-xs opacity-50 font-medium">{item.desc}</p>
+                                                    <p className="font-inter text-sm font-bold uppercase tracking-[0.1em]">{item.title}</p>
+                                                    <p className="font-inter text-xs opacity-50 font-medium">{item.desc}</p>
                                                 </div>
                                             </div>
                                         ))}
@@ -197,7 +197,7 @@ const SubsidiaryPage = () => {
 
                                 <Link
                                     href={`/contact?sector=${foundSector.title}&color=${encodeURIComponent(themeColor)}`}
-                                    className="w-full py-5 rounded-2xl font-black uppercase tracking-widest text-xs mt-12 transition-all shadow-xl hover:scale-[1.02] active:scale-95 flex items-center justify-center"
+                                    className="w-full py-5 rounded-2xl font-inter font-bold uppercase tracking-[0.15em] text-xs mt-12 transition-all shadow-xl hover:scale-[1.02] active:scale-95 flex items-center justify-center"
                                     style={{ backgroundColor: themeColor, color: foundSector.secondaryColor }}
                                 >
                                     Contact Business Office

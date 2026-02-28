@@ -17,10 +17,10 @@ const SectorPage = () => {
     if (!sector) {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center bg-warm-platinum px-4">
-                <h1 className="text-4xl font-black text-navy mb-6">Sector Not Found</h1>
+                <h1 className="font-display text-5xl text-navy mb-6 tracking-[0.04em]">Sector Not Found</h1>
                 <Link
                     href="/"
-                    className="navy-gradient text-platinum px-8 py-4 rounded-xl font-bold flex items-center gap-2"
+                    className="navy-gradient text-platinum px-8 py-4 rounded-xl font-inter font-bold flex items-center gap-2 tracking-wide"
                 >
                     <ArrowLeft size={18} /> Back to Homepage
                 </Link>
@@ -51,7 +51,7 @@ const SectorPage = () => {
                     >
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 text-platinum/60 hover:text-white transition-colors text-xs font-black uppercase tracking-[0.3em] mb-4"
+                            className="inline-flex items-center gap-2 text-platinum/60 hover:text-white transition-colors font-inter text-xs font-semibold uppercase tracking-[0.3em] mb-4"
                         >
                             <ArrowLeft size={14} /> Back to Group
                         </Link>
@@ -62,9 +62,9 @@ const SectorPage = () => {
                             >
                                 <sector.icon size={40} />
                             </div>
-                            <h1 className="text-6xl md:text-8xl font-black text-platinum tracking-tighter uppercase leading-[0.85]">
+                            <h1 className="font-display text-7xl md:text-9xl text-platinum tracking-[0.04em] leading-[0.85]">
                                 {sector.title.split(' ')[0]} <br />
-                                <span className="italic" style={{ color: sector.color }}>{sector.title.split(' ').slice(1).join(' ') || "Solutions"}</span>
+                                <span style={{ color: sector.color }}>{sector.title.split(' ').slice(1).join(' ') || "Solutions"}</span>
                             </h1>
                         </div>
                     </motion.div>
@@ -84,8 +84,8 @@ const SectorPage = () => {
                                 transition={{ delay: 0.2 }}
                                 className="glass-light p-12 rounded-[3rem] border border-white/20 shadow-xl"
                             >
-                                <h2 className="text-3xl font-black text-navy mb-8 uppercase tracking-tight italic">Sector Vision</h2>
-                                <p className="text-2xl text-navy/70 leading-relaxed font-semibold mb-10">
+                                <h2 className="font-display text-4xl text-navy mb-8 tracking-[0.06em]">Sector Vision</h2>
+                                <p className="font-inter text-2xl text-navy/70 leading-relaxed font-semibold mb-10">
                                     {sector.fullDescription}
                                 </p>
 
@@ -97,8 +97,8 @@ const SectorPage = () => {
                                     ].map((item, i) => (
                                         <div key={i} className="space-y-2">
                                             <item.icon style={{ color: sector.color }} size={24} />
-                                            <p className="text-navy font-black text-lg tracking-tighter">{item.val}</p>
-                                            <p className="text-[10px] uppercase tracking-widest text-navy/40 font-bold">{item.label}</p>
+                                            <p className="font-display text-navy text-2xl tracking-[0.04em]">{item.val}</p>
+                                            <p className="font-inter text-[10px] uppercase tracking-[0.2em] text-navy/40 font-semibold">{item.label}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -106,7 +106,7 @@ const SectorPage = () => {
 
                             {/* Subsidiaries */}
                             <div className="space-y-8">
-                                <h2 className="text-4xl font-black text-navy uppercase tracking-tighter ml-4">
+                                <h2 className="font-display text-5xl text-navy tracking-[0.04em] ml-4">
                                     Our <span style={{ color: sector.color }}>Subsidiaries.</span>
                                 </h2>
                                 <div className="grid grid-cols-1 gap-6">
@@ -117,7 +117,7 @@ const SectorPage = () => {
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: i * 0.1 }}
-                                                className="group glass p-8 rounded-[2rem] border border-navy/5 hover:border-gold/20 transition-all flex items-center justify-between"
+                                                className="group glass p-8 rounded-[2rem] border border-navy/5 hover:border-navy/15 transition-all flex items-center justify-between"
                                             >
                                                 <div className="flex items-center gap-6">
                                                     <div
@@ -126,8 +126,8 @@ const SectorPage = () => {
                                                         <CheckCircle2 size={24} style={{ color: sector.color }} />
                                                     </div>
                                                     <div>
-                                                        <h3 className="text-xl font-black text-navy uppercase">{sub.name}</h3>
-                                                        <p className="text-navy/50 font-medium text-sm">{sub.description}</p>
+                                                        <h3 className="font-display text-2xl text-navy tracking-[0.04em]">{sub.name}</h3>
+                                                        <p className="font-inter text-navy/50 font-medium text-sm">{sub.description}</p>
                                                     </div>
                                                 </div>
                                                 <ChevronRight className="text-navy/20 group-hover:translate-x-1 transition-all" size={24} style={{ color: sector.color }} />
@@ -151,7 +151,7 @@ const SectorPage = () => {
                                     style={{ backgroundColor: sector.color }}
                                 ></div>
                                 <div className="relative z-10 space-y-10">
-                                    <h3 className="text-xl font-black uppercase tracking-widest">Performance Track</h3>
+                                    <h3 className="font-inter text-xs font-semibold uppercase tracking-[0.3em] text-platinum/50">Performance Track</h3>
                                     <div className="space-y-8">
                                         {[
                                             { label: "Operational Excellence", val: "99%" },
@@ -159,14 +159,14 @@ const SectorPage = () => {
                                             { label: "Growth Index", val: "High" },
                                         ].map((stat, i) => (
                                             <div key={i} className="border-b border-platinum/10 pb-6 last:border-0 last:pb-0">
-                                                <p className="text-4xl font-black tracking-tighter" style={{ color: sector.color }}>{stat.val}</p>
-                                                <p className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-60 mt-2">{stat.label}</p>
+                                                <p className="font-display text-5xl tracking-[0.04em]" style={{ color: sector.color }}>{stat.val}</p>
+                                                <p className="font-inter text-[10px] uppercase tracking-[0.2em] font-semibold opacity-60 mt-2">{stat.label}</p>
                                             </div>
                                         ))}
                                     </div>
                                     <Link
                                         href={`/contact?sector=${encodeURIComponent(sector.title)}&color=${encodeURIComponent(sector.color)}`}
-                                        className="w-full py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center justify-center"
+                                        className="w-full py-4 rounded-xl font-inter font-bold uppercase tracking-[0.15em] text-xs transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center justify-center"
                                         style={{ backgroundColor: sector.color, color: sector.secondaryColor }}
                                     >
                                         Connect Office
@@ -175,10 +175,10 @@ const SectorPage = () => {
                             </motion.div>
 
                             <div className="glass-light p-8 rounded-[2rem] border border-navy/5">
-                                <h4 className="text-navy font-black uppercase text-xs tracking-[0.3em] mb-4">Market Focus</h4>
+                                <h4 className="font-inter text-navy font-semibold uppercase text-xs tracking-[0.3em] mb-4">Market Focus</h4>
                                 <div className="flex flex-wrap gap-2">
                                     {["Domestic Growth", "Infrastructure", "Export Ready", "Innovation"].map(tag => (
-                                        <span key={tag} className="px-3 py-1 bg-navy/5 rounded-full text-[10px] font-black text-navy/60 uppercase tracking-widest border border-navy/5">
+                                        <span key={tag} className="px-3 py-1 bg-navy/5 rounded-full font-inter text-[10px] font-semibold text-navy/60 uppercase tracking-[0.15em] border border-navy/5">
                                             {tag}
                                         </span>
                                     ))}

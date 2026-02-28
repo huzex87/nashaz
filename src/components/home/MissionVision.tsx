@@ -18,8 +18,8 @@ const MissionVision = () => {
             <div className="absolute inset-0 opacity-10 pointer-events-none light-mesh"></div>
 
             {/* Layered Glows */}
-            <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-gold/5 rounded-full blur-[120px]"></div>
-            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-navy/5 rounded-full blur-[100px]"></div>
+            <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-navy/3 rounded-full blur-[120px]"></div>
+            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-navy/3 rounded-full blur-[100px]"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
@@ -30,16 +30,16 @@ const MissionVision = () => {
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="group relative glass-light p-12 lg:p-16 rounded-[3rem] border border-gold/10 hover:border-gold/30 transition-all duration-500 overflow-hidden"
+                        className="group relative glass-light p-12 lg:p-16 rounded-[3rem] border border-navy/5 hover:border-navy/15 transition-all duration-500 overflow-hidden"
                     >
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-bl-[100%] group-hover:bg-gold/10 transition-colors"></div>
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-navy/3 rounded-bl-[100%] group-hover:bg-navy/5 transition-colors"></div>
                         <div className="relative z-10 space-y-8">
                             <div className="w-16 h-16 bg-navy text-platinum rounded-2xl flex items-center justify-center border border-navy/5 shadow-lg group-hover:bg-gold group-hover:text-navy transition-all duration-500">
                                 <Eye size={32} />
                             </div>
                             <div className="space-y-4">
-                                <h3 className="text-4xl font-black text-navy tracking-tighter">Our <span className="text-gold-gradient">Vision</span></h3>
-                                <p className="text-2xl text-navy/70 leading-relaxed italic font-semibold">
+                                <h3 className="font-display text-5xl text-navy tracking-[0.06em]">Our <span className="text-gold-gradient">Vision</span></h3>
+                                <p className="font-inter text-xl text-navy/60 leading-relaxed italic font-medium">
                                     &quot;To build a dependable business platform that meets the everyday needs of individuals, businesses, and institutions.&quot;
                                 </p>
                             </div>
@@ -51,16 +51,16 @@ const MissionVision = () => {
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="group relative glass-light p-12 lg:p-16 rounded-[3rem] border border-gold/10 hover:border-gold/30 transition-all duration-500 overflow-hidden"
+                        className="group relative glass-light p-12 lg:p-16 rounded-[3rem] border border-navy/5 hover:border-navy/15 transition-all duration-500 overflow-hidden"
                     >
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-bl-[100%] group-hover:bg-gold/10 transition-colors"></div>
+                        <div className="absolute top-0 right-0 w-48 h-48 bg-navy/3 rounded-bl-[100%] group-hover:bg-navy/5 transition-colors"></div>
                         <div className="relative z-10 space-y-8">
                             <div className="w-16 h-16 bg-navy text-platinum rounded-2xl flex items-center justify-center border border-navy/5 shadow-lg group-hover:bg-gold group-hover:text-navy transition-all duration-500">
                                 <Target size={32} />
                             </div>
                             <div className="space-y-4">
-                                <h3 className="text-4xl font-black text-navy tracking-tighter">Our <span className="text-gold-gradient">Mission</span></h3>
-                                <p className="text-xl text-navy/70 leading-relaxed font-medium">
+                                <h3 className="font-display text-5xl text-navy tracking-[0.06em]">Our <span className="text-gold-gradient">Mission</span></h3>
+                                <p className="font-inter text-lg text-navy/60 leading-relaxed font-medium">
                                     To deliver practical solutions across several sectors of the economy that drive economic growth, support businesses, and improve everyday life through dedication and strategic innovation.
                                 </p>
                             </div>
@@ -74,11 +74,11 @@ const MissionVision = () => {
                         <motion.p
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
-                            className="text-gold font-black uppercase tracking-[0.4em] text-xs"
+                            className="font-inter text-navy/40 font-bold uppercase tracking-[0.4em] text-xs"
                         >
                             The Foundation
                         </motion.p>
-                        <h2 className="text-5xl md:text-6xl font-black text-navy tracking-tighter">
+                        <h2 className="font-display text-6xl md:text-7xl text-navy tracking-[0.06em]">
                             Our Core <span className="text-gold-gradient">Values.</span>
                         </h2>
                     </div>
@@ -91,14 +91,14 @@ const MissionVision = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="group p-10 glass-light rounded-[2.5rem] border border-gold/10 hover:border-gold/40 transition-all duration-500 text-center space-y-8 hover:-translate-y-2 hover:shadow-xl"
+                                className="group p-10 glass-light rounded-[2.5rem] border border-navy/5 hover:border-navy/15 transition-all duration-500 text-center space-y-8 hover:-translate-y-2 hover:shadow-xl"
                             >
                                 <div className="w-20 h-20 mx-auto rounded-3xl bg-navy text-platinum border border-navy/5 flex items-center justify-center group-hover:bg-gold group-hover:text-navy transition-all duration-500 shadow-xl group-hover:scale-110">
                                     <value.icon size={36} className="transition-transform duration-500" />
                                 </div>
                                 <div className="space-y-4">
-                                    <h4 className="text-2xl font-black text-navy tracking-tight group-hover:text-gold transition-colors">{value.name}</h4>
-                                    <p className="text-navy/50 text-sm leading-relaxed font-medium">{value.desc}</p>
+                                    <h4 className="font-display text-3xl text-navy tracking-[0.06em] group-hover:text-gold transition-colors">{value.name}</h4>
+                                    <p className="font-inter text-navy/50 text-sm leading-relaxed font-medium">{value.desc}</p>
                                 </div>
                             </motion.div>
                         ))}
