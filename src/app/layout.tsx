@@ -51,6 +51,7 @@ import Footer from "@/components/layout/Footer";
 import Preloader from "@/components/ui/Preloader";
 import PageTransition from "@/components/ui/PageTransition";
 import StickyAnchorNav from "@/components/ui/StickyAnchorNav";
+import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 
 export default function RootLayout({
   children,
@@ -62,6 +63,9 @@ export default function RootLayout({
       <body
         className={`${bebasNeue.variable} ${inter.variable} font-inter antialiased bg-warm-platinum overflow-x-hidden`}
       >
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
         <Preloader />
         <StickyAnchorNav />
         <Navbar />
