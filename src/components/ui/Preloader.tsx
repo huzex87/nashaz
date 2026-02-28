@@ -35,7 +35,7 @@ const Preloader = () => {
                     {/* Background mesh glow */}
                     <div className="absolute inset-0 mesh-gradient opacity-40"></div>
 
-                    <div className="relative z-10 flex flex-col items-center gap-10">
+                    <div className="relative z-10 flex flex-col items-center gap-8 sm:gap-10 px-6">
                         {/* Logo Animation */}
                         <motion.div
                             initial={{ scale: 0.8, opacity: 0 }}
@@ -43,12 +43,11 @@ const Preloader = () => {
                             transition={{ duration: 1, ease: "easeOut" }}
                             className="relative"
                         >
-                            <div className="w-28 h-28 flex items-center justify-center relative">
+                            <div className="w-20 h-20 sm:w-28 sm:h-28 flex items-center justify-center relative">
                                 <Image
                                     src="/images/nahsaz-logo.png"
                                     alt="NAHSAZ Group"
-                                    width={112}
-                                    height={112}
+                                    fill
                                     className="object-contain brightness-0 invert"
                                     priority
                                 />
@@ -64,12 +63,12 @@ const Preloader = () => {
                         </motion.div>
 
                         {/* Brand Text */}
-                        <div className="space-y-3 text-center">
+                        <div className="space-y-2 sm:space-y-3 text-center">
                             <motion.h2
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.5 }}
-                                className="font-display text-5xl tracking-[0.3em] text-white"
+                                className="font-display text-4xl sm:text-5xl tracking-[0.2em] sm:tracking-[0.3em] text-white"
                             >
                                 NAHSAZ
                             </motion.h2>
@@ -77,29 +76,31 @@ const Preloader = () => {
                                 initial={{ opacity: 0, y: 5 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.7 }}
-                                className="font-inter text-[10px] tracking-[0.5em] text-white/40 uppercase font-semibold"
+                                className="font-inter text-[8px] sm:text-[10px] tracking-[0.4em] sm:tracking-[0.5em] text-white/40 uppercase font-semibold"
                             >
                                 Group
                             </motion.p>
 
-                            <div className="flex items-center gap-4 overflow-hidden h-6 pt-4">
+                            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 h-auto sm:h-6 pt-4">
                                 {["Integrity", "Innovation", "Excellence"].map((pillar, i) => (
-                                    <motion.span
+                                    <motion.div
                                         key={pillar}
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ delay: 0.8 + (i * 0.2) }}
-                                        className="font-inter text-[9px] uppercase font-semibold tracking-[0.3em] text-gold/50"
+                                        className="flex items-center gap-3 sm:gap-4"
                                     >
-                                        {pillar}
-                                        {i < 2 && <span className="ml-4 opacity-30">|</span>}
-                                    </motion.span>
+                                        <span className="font-inter text-[8px] sm:text-[9px] uppercase font-semibold tracking-[0.2em] sm:tracking-[0.3em] text-gold/50 whitespace-nowrap">
+                                            {pillar}
+                                        </span>
+                                        {i < 2 && <span className="opacity-20 text-white text-[8px] sm:text-[9px]">|</span>}
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>
 
                         {/* Progress Bar */}
-                        <div className="w-64 h-[2px] bg-white/5 rounded-full overflow-hidden relative mt-4">
+                        <div className="w-48 sm:w-64 h-[1px] sm:h-[2px] bg-white/5 rounded-full overflow-hidden relative mt-2 sm:mt-4">
                             <motion.div
                                 initial={{ width: "0%" }}
                                 animate={{ width: "100%" }}
@@ -115,7 +116,7 @@ const Preloader = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 0.3 }}
                             transition={{ delay: 1.5 }}
-                            className="font-inter text-[8px] uppercase font-semibold tracking-[0.4em] text-platinum"
+                            className="font-inter text-[7px] sm:text-[8px] uppercase font-semibold tracking-[0.3em] sm:tracking-[0.4em] text-platinum"
                         >
                             Establishing New Standards
                         </motion.p>

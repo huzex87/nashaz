@@ -7,6 +7,7 @@ const sections = [
     { id: "ceo", label: "Founder" },
     { id: "sectors", label: "Portfolio" },
     { id: "vision", label: "Purpose" },
+    { id: "contact-cta", label: "Contact" },
 ];
 
 export default function StickyAnchorNav() {
@@ -43,7 +44,7 @@ export default function StickyAnchorNav() {
     };
 
     return (
-        <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-6">
+        <div className="fixed right-4 sm:right-8 top-1/2 -translate-y-1/2 z-50 hidden xl:flex flex-col gap-6">
             {sections.map((section) => (
                 <button
                     key={section.id}
@@ -60,7 +61,7 @@ export default function StickyAnchorNav() {
                     </span>
                     <div
                         className={`w-3 h-3 rounded-full border-2 transition-all duration-500 ${activeSection === section.id
-                            ? "bg-navy border-navy scale-125"
+                            ? "bg-navy border-navy scale-125 shadow-lg shadow-navy/20"
                             : "bg-transparent border-navy/20 group-hover:border-navy group-hover:scale-110"
                             }`}
                     />

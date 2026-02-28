@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 w-full z-[100] transition-all duration-500 ${scrolled ? "glass-nav py-3 shadow-2xl" : "bg-transparent py-6"
+            className={`fixed top-0 w-full z-[100] transition-all duration-500 ${scrolled ? "glass-nav py-3 shadow-2xl" : "bg-transparent py-5 sm:py-6"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,22 +37,21 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         className="flex-shrink-0 flex items-center"
                     >
-                        <Link href="/" className="flex items-center gap-4 group">
-                            <div className="w-12 h-12 relative flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <Link href="/" className="flex items-center gap-3 sm:gap-4 group">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 relative flex items-center justify-center group-hover:scale-105 transition-transform">
                                 <Image
                                     src="/images/nahsaz-logo.png"
                                     alt="NAHSAZ Group Logo"
-                                    width={48}
-                                    height={48}
+                                    fill
                                     className="object-contain"
                                     priority
                                 />
                             </div>
-                            <div className="hidden lg:flex flex-col leading-none">
-                                <span className="font-display text-3xl text-navy tracking-[0.25em] leading-none">
+                            <div className="flex flex-col leading-none">
+                                <span className="font-display text-xl sm:text-2xl md:text-3xl text-navy tracking-[0.2em] sm:tracking-[0.25em] leading-none">
                                     NAHSAZ
                                 </span>
-                                <span className="font-inter text-[9px] text-navy/50 tracking-[0.45em] uppercase font-semibold mt-0.5">
+                                <span className="font-inter text-[7px] sm:text-[9px] text-navy/50 tracking-[0.35em] sm:tracking-[0.45em] uppercase font-semibold mt-0.5">
                                     Group
                                 </span>
                             </div>
@@ -60,7 +59,7 @@ const Navbar = () => {
                     </motion.div>
 
                     {/* Desktop Nav */}
-                    <div className="hidden md:flex items-center space-x-12">
+                    <div className="hidden md:flex items-center space-x-8 lg:space-x-12">
                         {navLinks.map((link, i) => (
                             <motion.div
                                 key={link.name}
@@ -70,7 +69,7 @@ const Navbar = () => {
                             >
                                 <Link
                                     href={link.href}
-                                    className="font-inter text-[11px] font-semibold uppercase tracking-[0.2em] transition-all hover:text-gold text-navy/60 relative group"
+                                    className="font-inter text-[10px] lg:text-[11px] font-semibold uppercase tracking-[0.15em] lg:tracking-[0.2em] transition-all hover:text-gold text-navy/60 relative group"
                                 >
                                     {link.name}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-navy transition-all group-hover:w-full"></span>
@@ -79,7 +78,7 @@ const Navbar = () => {
                         ))}
                         <Link
                             href="/contact"
-                            className="navy-gradient text-platinum px-8 py-3 rounded-xl font-inter text-[11px] font-bold uppercase tracking-[0.15em] transition-all shadow-xl shadow-navy/20 hover:scale-[1.05] active:scale-95 flex items-center justify-center"
+                            className="navy-gradient text-platinum px-6 lg:px-8 py-2.5 lg:py-3 rounded-lg lg:rounded-xl font-inter text-[10px] lg:text-[11px] font-bold uppercase tracking-[0.15em] transition-all shadow-xl shadow-navy/20 hover:scale-[1.05] active:scale-95 flex items-center justify-center"
                         >
                             Contact Office
                         </Link>
@@ -91,7 +90,7 @@ const Navbar = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="text-navy p-2 rounded-xl glass-light transition-colors"
                         >
-                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                            {isOpen ? <X size={20} /> : <Menu size={20} />}
                         </button>
                     </div>
                 </div>
@@ -106,23 +105,23 @@ const Navbar = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="md:hidden glass-light absolute top-full left-0 w-full border-t border-navy/5 overflow-hidden shadow-2xl"
                     >
-                        <div className="px-6 py-10 space-y-6">
+                        <div className="px-6 py-8 sm:py-10 space-y-5 sm:space-y-6">
                             {navLinks.map((link) => (
                                 <Link
                                     key={link.name}
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="flex items-center justify-between font-display text-2xl text-navy hover:text-gold transition-colors tracking-[0.1em]"
+                                    className="flex items-center justify-between font-display text-xl sm:text-2xl text-navy hover:text-gold transition-colors tracking-[0.1em]"
                                 >
                                     {link.name}
-                                    <ChevronRight size={20} className="text-navy/20" />
+                                    <ChevronRight size={18} className="text-navy/20" />
                                 </Link>
                             ))}
-                            <div className="pt-6">
+                            <div className="pt-4 sm:pt-6">
                                 <Link
                                     href="/contact"
                                     onClick={() => setIsOpen(false)}
-                                    className="w-full navy-gradient text-platinum py-5 rounded-2xl font-inter font-bold uppercase tracking-[0.2em] text-sm shadow-2xl flex items-center justify-center"
+                                    className="w-full navy-gradient text-platinum py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-bold uppercase tracking-[0.2em] text-xs sm:text-sm shadow-2xl flex items-center justify-center"
                                 >
                                     Contact Office
                                 </Link>

@@ -35,18 +35,18 @@ const ContactForm = ({ initialSector, themeColor = "#C5A059" }: ContactFormProps
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.9 }}
-                        className="glass-light p-16 rounded-[3rem] text-center space-y-8 border border-navy/5 shadow-2xl"
+                        className="glass-light p-8 sm:p-12 lg:p-16 rounded-2xl sm:rounded-[3rem] text-center space-y-6 sm:space-y-8 border border-navy/5 shadow-2xl"
                     >
-                        <div className="w-24 h-24 rounded-full bg-navy/5 flex items-center justify-center mx-auto">
-                            <Send size={40} className="text-navy" />
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-navy/5 flex items-center justify-center mx-auto">
+                            <Send size={32} className="text-navy" />
                         </div>
-                        <div className="space-y-4">
-                            <h2 className="font-display text-5xl text-navy tracking-[0.04em]">Transmission Successful</h2>
-                            <p className="font-inter text-navy/50 font-medium max-w-sm mx-auto">Your inquiry has been routed to the {selectedSector || "relevant"} strategic business office. A corporate representative will reach out shortly.</p>
+                        <div className="space-y-3 sm:space-y-4">
+                            <h2 className="font-display text-4xl sm:text-5xl text-navy tracking-[0.04em]">Transmission Successful</h2>
+                            <p className="font-inter text-xs sm:text-sm lg:text-base text-navy/50 font-medium max-w-sm mx-auto">Your inquiry has been routed to the {selectedSector || "relevant"} strategic business office. A corporate representative will reach out shortly.</p>
                         </div>
                         <button
                             onClick={() => setStatus("idle")}
-                            className="font-inter text-navy font-bold uppercase tracking-[0.15em] text-xs hover:underline"
+                            className="font-inter text-navy font-bold uppercase tracking-[0.15em] text-[10px] sm:text-xs hover:underline"
                         >
                             Send Another Message
                         </button>
@@ -56,50 +56,50 @@ const ContactForm = ({ initialSector, themeColor = "#C5A059" }: ContactFormProps
                         onSubmit={handleSubmit}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        className="space-y-8"
+                        className="space-y-6 sm:space-y-8"
                     >
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
                             {/* Name */}
-                            <div className="space-y-3">
-                                <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                            <div className="space-y-2 sm:space-y-3">
+                                <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                     <User size={10} /> Full Name
                                 </label>
                                 <input
                                     required
                                     type="text"
                                     placeholder="Enter your full name"
-                                    className="w-full bg-white border border-navy/5 rounded-2xl px-6 py-4 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
+                                    className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
                                 />
                             </div>
 
                             {/* Email */}
-                            <div className="space-y-3">
-                                <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                            <div className="space-y-2 sm:space-y-3">
+                                <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                     <Mail size={10} /> Corporate Email
                                 </label>
                                 <input
                                     required
                                     type="email"
                                     placeholder="email@company.com"
-                                    className="w-full bg-white border border-navy/5 rounded-2xl px-6 py-4 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
+                                    className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
                                 />
                             </div>
 
                             {/* Phone */}
-                            <div className="space-y-3">
-                                <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                            <div className="space-y-2 sm:space-y-3">
+                                <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                     <Phone size={10} /> Contact Number
                                 </label>
                                 <input
                                     type="tel"
                                     placeholder="+234 (0) ..."
-                                    className="w-full bg-white border border-navy/5 rounded-2xl px-6 py-4 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
+                                    className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm"
                                 />
                             </div>
 
                             {/* Sector Selection */}
-                            <div className="space-y-3">
-                                <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                            <div className="space-y-2 sm:space-y-3">
+                                <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                     <Briefcase size={10} /> Business Sector
                                 </label>
                                 <div className="relative">
@@ -107,7 +107,7 @@ const ContactForm = ({ initialSector, themeColor = "#C5A059" }: ContactFormProps
                                         required
                                         value={selectedSector}
                                         onChange={(e) => setSelectedSector(e.target.value)}
-                                        className="w-full bg-white border border-navy/5 rounded-2xl px-6 py-4 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm appearance-none"
+                                        className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm appearance-none"
                                     >
                                         <option value="" disabled>Select a sector</option>
                                         {sectorsList.map(s => <option key={s} value={s}>{s}</option>)}
@@ -123,12 +123,12 @@ const ContactForm = ({ initialSector, themeColor = "#C5A059" }: ContactFormProps
                                 <motion.div
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className="space-y-3"
+                                    className="space-y-2 sm:space-y-3"
                                 >
-                                    <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                                    <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                         <Building2 size={10} /> Property Interest
                                     </label>
-                                    <select className="w-full bg-white border border-navy/5 rounded-2xl px-6 py-4 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm">
+                                    <select className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-2xl px-5 sm:px-6 py-3.5 sm:py-4 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm">
                                         <option>Residential Acquisition</option>
                                         <option>Commercial Leasing</option>
                                         <option>Property Management</option>
@@ -139,21 +139,21 @@ const ContactForm = ({ initialSector, themeColor = "#C5A059" }: ContactFormProps
                         </AnimatePresence>
 
                         {/* Message */}
-                        <div className="space-y-3">
-                            <label className="font-inter text-[10px] font-semibold uppercase tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
+                        <div className="space-y-2 sm:space-y-3">
+                            <label className="font-inter text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-navy/40 ml-4 flex items-center gap-2">
                                 <MessageSquare size={10} /> Strategic Inquiry
                             </label>
                             <textarea
                                 required
                                 rows={5}
                                 placeholder="How can NAHSAZ Group support your objectives?"
-                                className="w-full bg-white border border-navy/5 rounded-[2rem] px-8 py-6 font-inter text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm resize-none"
+                                className="w-full bg-white border border-navy/5 rounded-xl sm:rounded-[2rem] px-6 sm:px-8 py-4 sm:py-6 font-inter text-sm sm:text-base text-navy font-medium focus:border-navy/30 outline-none transition-all shadow-sm resize-none"
                             ></textarea>
                         </div>
 
                         <button
                             disabled={isSubmitting}
-                            className="w-full py-6 rounded-2xl font-inter font-bold uppercase tracking-[0.2em] text-xs text-platinum shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.98] flex items-center justify-center gap-4 relative overflow-hidden group"
+                            className="w-full py-4 sm:py-6 rounded-xl sm:rounded-2xl font-inter font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs text-platinum shadow-2xl transition-all hover:scale-[1.01] active:scale-[0.98] flex items-center justify-center gap-3 sm:gap-4 relative overflow-hidden group"
                             style={{ backgroundColor: selectedSector ? themeColor : "#1B2D3D" }}
                         >
                             <span className="relative z-10">{isSubmitting ? "Routing Inquiry..." : "Communicate Intent"}</span>
