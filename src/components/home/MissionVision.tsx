@@ -39,7 +39,7 @@ const MissionVision = () => {
                             </div>
                             <div className="space-y-3 sm:space-y-4">
                                 <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[0.06em]">Our <span className="text-gold-gradient">Vision</span></h3>
-                                <p className="font-inter text-base sm:text-lg lg:text-xl text-navy/60 leading-relaxed italic font-medium">
+                                <p className="font-inter text-base sm:text-lg lg:text-xl text-navy/70 leading-relaxed italic font-medium">
                                     &quot;To build a dependable business platform that meets the everyday needs of individuals, businesses, and institutions.&quot;
                                 </p>
                             </div>
@@ -60,7 +60,7 @@ const MissionVision = () => {
                             </div>
                             <div className="space-y-3 sm:space-y-4">
                                 <h3 className="font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[0.06em]">Our <span className="text-gold-gradient">Mission</span></h3>
-                                <p className="font-inter text-sm sm:text-base lg:text-lg text-navy/60 leading-relaxed font-medium">
+                                <p className="font-inter text-sm sm:text-base lg:text-lg text-navy/70 leading-relaxed font-medium">
                                     To deliver practical solutions across several sectors of the economy that drive economic growth, support businesses, and improve everyday life through dedication and strategic innovation.
                                 </p>
                             </div>
@@ -98,7 +98,7 @@ const MissionVision = () => {
                                 </div>
                                 <div className="space-y-2 sm:space-y-4">
                                     <h4 className="font-display text-2xl sm:text-3xl text-navy tracking-[0.06em] group-hover:text-gold transition-colors">{value.name}</h4>
-                                    <p className="font-inter text-navy/50 text-xs sm:text-sm leading-relaxed font-medium">{value.desc}</p>
+                                    <p className="font-inter text-navy/60 text-xs sm:text-sm leading-relaxed font-medium">{value.desc}</p>
                                 </div>
                             </motion.div>
                         ))}

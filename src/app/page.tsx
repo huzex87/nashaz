@@ -15,11 +15,15 @@ export default function Home() {
           <CEOMessage />
         </div>
 
-        <Sectors />
+        <div className="relative z-20 rounded-t-[3rem] sm:rounded-t-[4rem] overflow-hidden -mt-8">
+          <Sectors />
+        </div>
 
-        <MissionVision />
+        <div className="relative z-30 bg-warm-platinum rounded-t-[3rem] sm:rounded-t-[4rem] -mt-8">
+          <MissionVision />
 
-        <ContactCTA />
+          <ContactCTA />
+        </div>
       </div>
     </main>
   );

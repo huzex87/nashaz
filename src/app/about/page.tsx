@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Target, Eye, Gem, ArrowRight, ShieldCheck, Zap, Globe2 } from "lucide-react";
+import { Target, Eye, ArrowRight, ShieldCheck, Zap, Globe2 } from "lucide-react";
 import LegacyTimeline from "@/components/about/LegacyTimeline";
 
 const AboutPage = () => {

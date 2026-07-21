@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, Mail, Reply, Archive, Trash2, Calendar, User } from "lucide-react";
+import { Search, Reply, Archive, Trash2, Calendar, User } from "lucide-react";
 
 // Mock Data for Inquiries
 const mockupInquiries = [

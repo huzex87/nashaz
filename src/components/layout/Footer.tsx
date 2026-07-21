@@ -55,7 +55,7 @@ const Footer = () => {
                                 </span>
                             </div>
                         </Link>
-                        <p className="font-inter text-navy/50 text-base leading-relaxed max-w-sm font-medium">
+                        <p className="font-inter text-navy/60 text-base leading-relaxed max-w-sm font-medium">
                             Building a dependable business ecosystem that meets the strategic needs of individuals, businesses, and institutions across the Nigerian landscape.
                         </p>
                         <div className="flex space-x-3 sm:space-x-5">
@@ -83,7 +83,7 @@ const Footer = () => {
                                         <li key={link.name}>
                                             <Link
                                                 href={link.href}
-                                                className="font-inter text-navy/40 hover:text-navy text-sm font-medium transition-all flex items-center group/link"
+                                                className="font-inter text-navy/60 hover:text-navy text-sm font-medium transition-all flex items-center group/link"
                                             >
                                                 {link.name}
                                                 <ExternalLink size={12} className="ml-2 opacity-0 group-hover/link:opacity-100 transition-opacity" />

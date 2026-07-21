@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, MapPin, Clock, Search, ArrowRight, Star, Users, Zap, Award } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, Search, ArrowRight, Star, Users, Zap, Award } from "lucide-react";
 import { jobs } from "@/lib/data/jobs";
 
 const JobCard = ({ job }: { job: typeof jobs[0] }) => {

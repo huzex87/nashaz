@@ -1,13 +1,8 @@
 import {
     Building2,
-    HardHat,
     Stethoscope,
     Zap,
     Sprout,
-    Pickaxe,
-    Truck,
-    Car,
-    Briefcase,
     LucideIcon
 } from "lucide-react";
 
