@@ -3,7 +3,6 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { ArrowLeft, ChevronRight, CheckCircle2, Globe, ShieldCheck, Users2 } from "lucide-react";
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
@@ -30,18 +29,25 @@ const SectorPage = () => {
 
     return (
         <main className="min-h-screen bg-warm-platinum pb-16 sm:pb-24 lg:pb-32">
-            {/* Header / Hero */}
-            <section className="relative h-[50vh] sm:h-[60vh] flex items-end pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-navy">
-                <div className="absolute inset-0 opacity-40">
-                    <Image
-                        src="/images/nigerian_commerce_cityscape_1772059769112.png"
-                        alt={sector.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent"></div>
+            {/* Header / Hero — themed per sector */}
+            <section
+                className="relative h-[52vh] sm:h-[60vh] flex items-end pb-12 sm:pb-16 lg:pb-20 overflow-hidden bg-navy-deep"
+                style={{ backgroundColor: sector.secondaryColor }}
+            >
+                {/* Sector-colored ambient wash */}
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 80% 0%, ${sector.color}59 0px, transparent 55%), radial-gradient(circle at 0% 100%, ${sector.color}26 0px, transparent 45%)`,
+                    }}
+                ></div>
+                {/* Fine grid */}
+                <div className="absolute inset-0 opacity-[0.06] pointer-events-none hidden sm:block" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '64px 64px' }}></div>
+                {/* Ghosted sector glyph */}
+                <div className="absolute -top-10 -right-10 sm:top-0 sm:right-6 opacity-10 pointer-events-none">
+                    <sector.icon className="w-[240px] h-[240px] sm:w-[420px] sm:h-[420px]" style={{ color: sector.color }} strokeWidth={1} />
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                     <motion.div
@@ -50,10 +56,10 @@ const SectorPage = () => {
                         className="space-y-4 sm:space-y-6"
                     >
                         <Link
-                            href="/"
+                            href="/#sectors"
                             className="inline-flex items-center gap-2 text-platinum/60 hover:text-white transition-colors font-inter text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4"
                         >
-                            <ArrowLeft size={14} /> Back to Group
+                            <ArrowLeft size={14} /> Back to Portfolio
                         </Link>
                         <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
                             <div
@@ -67,6 +73,9 @@ const SectorPage = () => {
                                 <span style={{ color: sector.color }}>{sector.title.split(' ').slice(1).join(' ') || "Solutions"}</span>
                             </h1>
                         </div>
+                        <p className="font-inter text-base sm:text-lg lg:text-xl text-platinum/70 font-medium max-w-xl pl-0 sm:pl-[6.5rem]">
+                            {sector.tagline}
+                        </p>
                     </motion.div>
                 </div>
             </section>
@@ -155,13 +164,9 @@ const SectorPage = () => {
                                 <div className="relative z-10 space-y-8 sm:space-y-10">
                                     <h3 className="font-inter text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-platinum/50">Performance Track</h3>
                                     <div className="space-y-6 sm:space-y-8">
-                                        {[
-                                            { label: "Operational Excellence", val: "99%" },
-                                            { label: "Project Success Rate", val: "100%" },
-                                            { label: "Growth Index", val: "High" },
-                                        ].map((stat, i) => (
+                                        {sector.stats.map((stat, i) => (
                                             <div key={i} className="border-b border-platinum/10 pb-4 sm:pb-6 last:border-0 last:pb-0">
-                                                <p className="font-display text-4xl sm:text-5xl tracking-[0.04em]" style={{ color: sector.color }}>{stat.val}</p>
+                                                <p className="font-display text-4xl sm:text-5xl tracking-[0.04em]" style={{ color: sector.color }}>{stat.value}</p>
                                                 <p className="font-inter text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-semibold opacity-60 mt-1 sm:mt-2">{stat.label}</p>
                                             </div>
                                         ))}
@@ -179,7 +184,7 @@ const SectorPage = () => {
                             <div className="glass-light p-6 sm:p-8 rounded-xl sm:rounded-[2rem] border border-navy/5">
                                 <h4 className="font-inter text-navy font-semibold uppercase text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.3em] mb-4">Market Focus</h4>
                                 <div className="flex flex-wrap gap-2">
-                                    {["Domestic Growth", "Infrastructure", "Export Ready", "Innovation"].map(tag => (
+                                    {sector.marketFocus.map(tag => (
                                         <span key={tag} className="px-3 py-1 bg-navy/5 rounded-full font-inter text-[9px] sm:text-[10px] font-semibold text-navy/60 uppercase tracking-[0.12em] sm:tracking-[0.15em] border border-navy/5">
                                             {tag}
                                         </span>

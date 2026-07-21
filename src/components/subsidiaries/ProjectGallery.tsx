@@ -9,7 +9,7 @@ interface Project {
     name: string;
     year: string;
     location: string;
-    image: string;
+    image?: string;
 }
 
 interface ProjectGalleryProps {
@@ -46,13 +46,25 @@ const ProjectGallery = ({ projects, themeColor, subsidiaryName }: ProjectGallery
                         transition={{ delay: index * 0.1 }}
                         className="group relative h-[350px] sm:h-[450px] lg:h-[500px] rounded-2xl sm:rounded-[3rem] overflow-hidden border border-navy/5 shadow-2xl bg-white"
                     >
-                        {/* Project Image */}
-                        <Image
-                            src={project.image}
-                            alt={project.name}
-                            fill
-                            className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                        />
+                        {/* Project visual — image when available, themed panel otherwise */}
+                        {project.image ? (
+                            <Image
+                                src={project.image}
+                                alt={project.name}
+                                fill
+                                className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                            />
+                        ) : (
+                            <div
+                                className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105"
+                                style={{
+                                    backgroundColor: "#0F1E2B",
+                                    backgroundImage: `radial-gradient(circle at 75% 15%, ${themeColor}66 0px, transparent 55%), linear-gradient(135deg, ${themeColor}22 0%, transparent 60%)`,
+                                }}
+                            >
+                                <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '48px 48px' }}></div>
+                            </div>
+                        )}
 
                         {/* Overlays */}
                         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/20 to-transparent opacity-80"></div>

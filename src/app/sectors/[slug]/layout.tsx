@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             siteName: "NAHSAZ Group",
             images: [
                 {
-                    url: sector.subsidiaries[0]?.projects?.[0]?.image || '/images/default-og.png',
+                    url: '/images/nashaz_sectors_overview_1772038030316.png',
                     width: 1200,
                     height: 630,
                     alt: `${sector.title} Sector - NAHSAZ Group`,
@@ -29,6 +29,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             type: 'website',
         },
     };
+}
+
+export function generateStaticParams() {
+    return sectors.map((sector) => ({ slug: sector.slug }));
 }
 
 export default function SectorLayout({ children }: { children: React.ReactNode }) {
