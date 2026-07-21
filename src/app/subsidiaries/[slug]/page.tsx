@@ -3,7 +3,6 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { ArrowLeft, CheckCircle2, Trophy, Target, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
@@ -43,18 +42,21 @@ const SubsidiaryPage = () => {
 
     return (
         <main className="min-h-screen bg-warm-platinum pb-16 sm:pb-24 lg:pb-32">
-            {/* Hero Section */}
-            <section className="relative h-[60vh] sm:h-[70vh] flex items-end pb-12 sm:pb-20 lg:pb-24 overflow-hidden bg-navy">
+            {/* Hero Section — themed per parent sector */}
+            <section
+                className="relative h-[60vh] sm:h-[70vh] flex items-end pb-12 sm:pb-20 lg:pb-24 overflow-hidden bg-navy-deep"
+                style={{ backgroundColor: foundSector.secondaryColor }}
+            >
                 <div className="absolute inset-0">
-                    <Image
-                        src="/images/nigerian_commerce_cityscape_1772059769112.png"
-                        alt={subsidiary.name}
-                        fill
-                        className="object-cover opacity-30 grayscale hover:grayscale-0 transition-all duration-1000"
-                        priority
-                    />
                     <div
-                        className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-transparent"
+                        className="absolute inset-0 pointer-events-none"
+                        style={{
+                            backgroundImage: `radial-gradient(circle at 78% 10%, ${themeColor}59 0px, transparent 55%), radial-gradient(circle at 5% 100%, ${themeColor}26 0px, transparent 45%)`,
+                        }}
+                    ></div>
+                    <div className="absolute inset-0 opacity-[0.06] pointer-events-none hidden sm:block" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '64px 64px' }}></div>
+                    <div
+                        className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent"
                     ></div>
                 </div>
 
