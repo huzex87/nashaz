@@ -9,8 +9,8 @@ const CEOMessage = () => {
     return (
         <section id="ceo" className="py-16 sm:py-24 lg:py-32 bg-warm-platinum relative overflow-hidden">
             {/* Subtle Background Elements */}
-            <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-navy/3 rounded-full blur-[100px] -tr-20"></div>
-            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-gold/5 rounded-full blur-[100px] -bl-20"></div>
+            <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-navy/3 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-0 left-0 w-[40%] h-[40%] bg-gold/5 rounded-full blur-[100px]"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-20 items-center">
@@ -70,7 +70,7 @@ const CEOMessage = () => {
                                     &quot;At NAHSAZ Group, our vision is to build a dependable business platform
                                     that meets the strategic needs of individuals and institutions alike.&quot;
                                 </p>
-                                <div className="space-y-4 sm:space-y-6 font-medium text-base sm:text-lg text-navy/60 border-l-2 border-navy/10 pl-4 sm:pl-8">
+                                <div className="space-y-4 sm:space-y-6 font-medium text-base sm:text-lg text-navy/70 border-l-2 border-gold/40 pl-4 sm:pl-8">
                                     <p>
                                         From real estate and construction to healthcare and energy, we are committed to delivering practical solutions driven by integrity, professionalism, and long-term value creation.
                                     </p>

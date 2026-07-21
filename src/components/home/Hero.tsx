@@ -43,7 +43,7 @@ const Hero = () => {
                                 Delivering Solutions.
                             </h1>
 
-                            <p className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-navy/50 font-medium leading-relaxed max-w-2xl text-balance">
+                            <p className="font-inter text-base sm:text-lg md:text-xl lg:text-2xl text-navy/70 font-medium leading-relaxed max-w-2xl text-balance">
                                 Building a dependable business ecosystem that meets the strategic needs of individuals, businesses, and institutions across the Nigerian landscape.
                             </p>
                         </div>
