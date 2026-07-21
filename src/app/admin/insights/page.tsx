@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Plus, Search, MoreHorizontal, Edit2, Trash2, Eye } from "lucide-react";
+import { Plus, Search, Edit2, Trash2, Eye } from "lucide-react";
 import { news } from "@/lib/data/news";
 
 export default function InsightsAdminPage() {

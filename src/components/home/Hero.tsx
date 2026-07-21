@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ChevronRight, Play, Building2 } from "lucide-react";
 
@@ -48,16 +49,22 @@ const Hero = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-2 sm:pt-4">
-                            <button className="navy-gradient text-platinum px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-bold text-xs sm:text-sm transition-all shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 group hover:scale-[1.02] active:scale-95 tracking-wide">
+                            <Link
+                                href="/#sectors"
+                                className="navy-gradient text-platinum px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-bold text-xs sm:text-sm transition-all shadow-2xl shadow-navy/20 flex items-center justify-center gap-3 group hover:scale-[1.02] active:scale-95 tracking-wide"
+                            >
                                 Explore Subsidiaries
                                 <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                            </button>
-                            <button className="glass-light text-navy px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-3 group border border-navy/5 hover:bg-navy/5 active:scale-95 tracking-wide">
-                                Corporate Video
+                            </Link>
+                            <Link
+                                href="/#about"
+                                className="glass-light text-navy px-6 sm:px-10 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-3 group border border-navy/5 hover:bg-navy/5 active:scale-95 tracking-wide"
+                            >
+                                Our Story
                                 <div className="w-8 h-8 rounded-full bg-navy/5 flex items-center justify-center group-hover:bg-navy group-hover:text-white transition-colors">
                                     <Play className="ml-0.5" size={14} fill="currentColor" />
                                 </div>
-                            </button>
+                            </Link>
                         </div>
 
                         <div className="grid grid-cols-3 gap-4 sm:gap-8 lg:gap-12 pt-8 sm:pt-12 border-t border-navy/10">

@@ -88,6 +88,8 @@ const Navbar = () => {
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
+                            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                            aria-expanded={isOpen}
                             className="text-navy p-2 rounded-xl glass-light transition-colors"
                         >
                             {isOpen ? <X size={20} /> : <Menu size={20} />}

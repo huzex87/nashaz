@@ -32,7 +32,7 @@ const ProjectGallery = ({ projects, themeColor, subsidiaryName }: ProjectGallery
                     </p>
                 </div>
                 <p className="text-navy/50 font-medium max-w-md text-xs sm:text-sm md:text-base leading-relaxed">
-                    A chronicle of excellence. Explore the landmark developments that define {subsidiaryName}'s commitment to national growth.
+                    A chronicle of excellence. Explore the landmark developments that define {subsidiaryName}&rsquo;s commitment to national growth.
                 </p>
             </div>
 
