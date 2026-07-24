@@ -3,7 +3,7 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2, Trophy, Target, BarChart3 } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Target, Trophy, BarChart3 } from "lucide-react";
 import Link from "next/link";
 import { sectors } from "@/lib/data/sectors";
 import ProjectGallery from "@/components/subsidiaries/ProjectGallery";
@@ -11,7 +11,6 @@ import ProjectGallery from "@/components/subsidiaries/ProjectGallery";
 const SubsidiaryPage = () => {
     const { slug } = useParams();
 
-    // Find the subsidiary by searching through all sectors
     let foundSector = null;
     let subsidiary = null;
 
@@ -29,7 +28,7 @@ const SubsidiaryPage = () => {
             <div className="min-h-screen flex flex-col items-center justify-center bg-warm-platinum px-4">
                 <h1 className="font-display text-4xl sm:text-5xl text-navy mb-6 tracking-[0.04em]">Subsidiary Not Found</h1>
                 <Link
-                    href="/"
+                    href="/#sectors"
                     className="navy-gradient text-platinum px-8 py-4 rounded-xl font-inter font-bold flex items-center gap-2 tracking-wide text-sm"
                 >
                     <ArrowLeft size={18} /> Back to Homepage
@@ -39,172 +38,164 @@ const SubsidiaryPage = () => {
     }
 
     const themeColor = foundSector.color;
+    const nameParts = subsidiary.name.split(" ");
+    const nameLead = nameParts.slice(0, -1).join(" ");
+    const nameTail = nameParts.slice(-1).join(" ");
 
     return (
-        <main className="min-h-screen bg-warm-platinum pb-16 sm:pb-24 lg:pb-32">
-            {/* Hero Section — themed per parent sector */}
+        <main className="min-h-screen bg-warm-platinum overflow-x-hidden">
+            {/* ── Hero ─────────────────────────────────────────────── */}
             <section
-                className="relative h-[60vh] sm:h-[70vh] flex items-end pb-12 sm:pb-20 lg:pb-24 overflow-hidden bg-navy-deep"
+                className="relative min-h-[58vh] sm:min-h-[66vh] flex items-end pb-14 sm:pb-20 lg:pb-24 overflow-hidden"
                 style={{ backgroundColor: foundSector.secondaryColor }}
             >
-                <div className="absolute inset-0">
-                    <div
-                        className="absolute inset-0 pointer-events-none"
-                        style={{
-                            backgroundImage: `radial-gradient(circle at 78% 10%, ${themeColor}59 0px, transparent 55%), radial-gradient(circle at 5% 100%, ${themeColor}26 0px, transparent 45%)`,
-                        }}
-                    ></div>
-                    <div className="absolute inset-0 opacity-[0.06] pointer-events-none hidden sm:block" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '64px 64px' }}></div>
-                    <div
-                        className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-transparent"
-                    ></div>
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        backgroundImage: `radial-gradient(circle at 80% 8%, ${themeColor}59 0px, transparent 55%), radial-gradient(circle at 0% 100%, ${themeColor}26 0px, transparent 45%)`,
+                    }}
+                ></div>
+                <div className="absolute inset-0 opacity-[0.06] pointer-events-none hidden sm:block" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.7) 1px, transparent 1px)', backgroundSize: '64px 64px' }}></div>
+                <div className="absolute -top-16 -right-16 sm:top-4 sm:right-6 opacity-[0.08] pointer-events-none">
+                    <foundSector.icon className="w-[220px] h-[220px] sm:w-[400px] sm:h-[400px]" style={{ color: themeColor }} strokeWidth={1} />
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/50 to-transparent"></div>
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+                <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10">
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="space-y-6 sm:space-y-8"
+                        className="space-y-5 sm:space-y-7"
                     >
                         <Link
                             href={`/sectors/${foundSector.slug}`}
-                            className="inline-flex items-center gap-2 text-platinum/50 hover:text-white transition-colors font-inter text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4"
+                            className="inline-flex items-center gap-2 text-platinum/60 hover:text-white transition-colors font-inter text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em]"
                         >
                             <ArrowLeft size={14} /> Back to {foundSector.title}
                         </Link>
-
-                        <div className="space-y-3 sm:space-y-4">
-                            <motion.span
-                                initial={{ width: 0 }}
-                                animate={{ width: "80px" }}
-                                className="h-1 bg-current block mb-4 sm:mb-6"
-                                style={{ color: themeColor }}
-                            ></motion.span>
-                            <h1 className="font-display text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-white tracking-[0.04em] leading-[0.9] sm:leading-[0.85] max-w-4xl text-balance">
-                                {subsidiary.name.split(' ').slice(0, -1).join(' ')} <br className="hidden sm:block" />
-                                <span style={{ color: themeColor }}>{subsidiary.name.split(' ').slice(-1)}</span>
-                            </h1>
-                            <p className="font-inter text-lg sm:text-xl md:text-2xl text-platinum/70 font-medium max-w-2xl mt-4 sm:mt-8 leading-relaxed">
-                                {subsidiary.description}
-                            </p>
-                        </div>
+                        <span className="h-1 w-14 block rounded-full" style={{ backgroundColor: themeColor }}></span>
+                        <h1 className="font-display text-[2.5rem] leading-[0.95] sm:text-7xl md:text-8xl lg:text-[6.5rem] text-platinum tracking-[0.02em] sm:leading-[0.85] max-w-4xl">
+                            {nameLead}{" "}
+                            <span style={{ color: themeColor }}>{nameTail}</span>
+                        </h1>
+                        <p className="font-inter text-base sm:text-xl text-platinum/70 font-medium max-w-2xl">
+                            {subsidiary.description}
+                        </p>
                     </motion.div>
-                </div>
-
-                {/* Decorative Elements - Hidden on small mobile */}
-                <div className="absolute top-0 right-0 w-1/3 h-full overflow-hidden pointer-events-none opacity-10 sm:opacity-20 hidden sm:block">
-                    <foundSector.icon size={500} className="text-white absolute -top-20 -right-20 transform rotate-12" />
                 </div>
             </section>
 
-            {/* Overview Section */}
-            <section className="relative -mt-10 sm:-mt-16 z-20">
+            {/* ── Overview + stat strip ───────────────────────────── */}
+            <section className="relative z-20 -mt-8 sm:-mt-12">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-
-                        {/* Summary & Stats */}
-                        <div className="lg:col-span-8 flex flex-col gap-6 sm:gap-8">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="glass-light p-8 sm:p-12 md:p-16 rounded-2xl sm:rounded-[3rem] lg:rounded-[4rem] border border-white/20 shadow-2xl"
-                            >
-                                <div className="flex items-center gap-4 mb-6 sm:mb-8">
-                                    <div className="p-3 rounded-xl sm:rounded-2xl bg-navy/5">
-                                        <foundSector.icon className="w-6 h-6 sm:w-8 sm:h-8" style={{ color: themeColor }} />
-                                    </div>
-                                    <h2 className="font-inter text-[10px] sm:text-sm font-semibold uppercase tracking-[0.3em] text-navy/40">Division Overview</h2>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="glass-light rounded-2xl sm:rounded-[2.5rem] border border-navy/5 shadow-xl overflow-hidden"
+                    >
+                        <div className="p-7 sm:p-12 lg:p-16">
+                            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+                                <div className="p-2.5 rounded-xl" style={{ backgroundColor: `${themeColor}1A` }}>
+                                    <foundSector.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: themeColor }} />
                                 </div>
-
-                                <p className="font-inter text-xl sm:text-2xl md:text-3xl text-navy leading-snug font-bold mb-8 sm:mb-12 italic">
-                                    &quot;{subsidiary.longDescription}&quot;
-                                </p>
-
-                                {subsidiary.stats && (
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 pt-8 sm:pt-12 border-t border-navy/5">
-                                        {subsidiary.stats.map((stat, i) => (
-                                            <div key={i} className="space-y-1">
-                                                <p className="font-display text-4xl sm:text-5xl tracking-[0.04em]" style={{ color: themeColor }}>
-                                                    {stat.value}
-                                                </p>
-                                                <p className="font-inter text-[8px] sm:text-[10px] uppercase tracking-[0.2em] font-semibold text-navy/40">
-                                                    {stat.label}
-                                                </p>
-                                            </div>
-                                        ))}
+                                <span className="font-inter text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] text-navy/40">Division Overview</span>
+                            </div>
+                            <p className="font-inter text-lg sm:text-2xl lg:text-3xl text-navy/80 leading-relaxed font-semibold italic max-w-4xl">
+                                &ldquo;{subsidiary.longDescription}&rdquo;
+                            </p>
+                        </div>
+                        {subsidiary.stats && subsidiary.stats.length > 0 && (
+                            <div className="grid grid-cols-2 border-t border-navy/5">
+                                {subsidiary.stats.map((stat, i) => (
+                                    <div key={i} className={`p-6 sm:p-8 lg:p-10 ${i < subsidiary.stats!.length - 1 ? "border-r border-navy/5" : ""}`}>
+                                        <p className="font-display text-3xl sm:text-5xl tracking-[0.02em]" style={{ color: themeColor }}>{stat.value}</p>
+                                        <p className="font-inter text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-navy/40 font-semibold mt-2">{stat.label}</p>
                                     </div>
-                                )}
-                            </motion.div>
-
-                            {/* Features Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                                {subsidiary.features?.map((feature, i) => (
-                                    <motion.div
-                                        key={i}
-                                        initial={{ opacity: 0, scale: 0.95 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: i * 0.1 }}
-                                        className="bg-white p-6 sm:p-8 rounded-xl sm:rounded-[2.5rem] border border-navy/5 hover:border-navy/15 transition-all flex flex-col gap-4 sm:gap-6 group shadow-sm hover:shadow-xl"
-                                    >
-                                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-navy/5 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                                            <CheckCircle2 size={24} style={{ color: themeColor }} />
-                                        </div>
-                                        <h3 className="font-display text-xl sm:text-2xl text-navy tracking-[0.04em]">{feature}</h3>
-                                    </motion.div>
                                 ))}
                             </div>
+                        )}
+                    </motion.div>
+                </div>
+            </section>
 
-                            {/* Project Gallery Integration */}
-                            <ProjectGallery
-                                projects={subsidiary.projects || []}
-                                themeColor={themeColor}
-                                subsidiaryName={subsidiary.name}
-                            />
+            {/* ── Capabilities ────────────────────────────────────── */}
+            {subsidiary.features && subsidiary.features.length > 0 && (
+                <section className="py-16 sm:py-24 lg:py-28">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-navy tracking-[0.04em] mb-8 sm:mb-12">
+                            Core <span style={{ color: themeColor }}>Capabilities.</span>
+                        </h2>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                            {subsidiary.features.map((feature, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.06 }}
+                                    className="group bg-white p-6 sm:p-8 rounded-2xl sm:rounded-[1.75rem] border border-navy/5 hover:border-navy/15 hover:shadow-xl transition-all flex items-center gap-5"
+                                >
+                                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform" style={{ backgroundColor: `${themeColor}1A` }}>
+                                        <CheckCircle2 size={22} style={{ color: themeColor }} />
+                                    </div>
+                                    <h3 className="font-display text-lg sm:text-2xl text-navy tracking-[0.04em]">{feature}</h3>
+                                </motion.div>
+                            ))}
                         </div>
+                    </div>
+                </section>
+            )}
 
-                        {/* Lateral Sidebar */}
-                        <div className="lg:col-span-4 space-y-6 sm:space-y-8">
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                className="navy-gradient p-8 sm:p-12 rounded-2xl sm:rounded-[3.5rem] text-platinum shadow-2xl relative overflow-hidden group min-h-[400px] flex flex-col justify-between"
-                            >
-                                <div className="space-y-8 sm:space-y-12">
-                                    <div className="space-y-2">
-                                        <h3 className="font-inter text-[10px] sm:text-xs font-semibold uppercase tracking-[0.3em] opacity-50">Strategic Mandate</h3>
-                                        <h4 className="font-display text-3xl sm:text-4xl text-platinum tracking-[0.04em] leading-tight">Global Standards. Local Impact.</h4>
-                                    </div>
+            {/* ── Flagship Projects ───────────────────────────────── */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ProjectGallery
+                    projects={subsidiary.projects || []}
+                    themeColor={themeColor}
+                    subsidiaryName={subsidiary.name}
+                />
+            </div>
 
-                                    <div className="space-y-5 sm:space-y-6">
-                                        {[
-                                            { icon: Target, title: "Mission Driven", desc: "Aligning with national development goals." },
-                                            { icon: Trophy, title: "Excellence", desc: "Zero-compromise on quality and safety." },
-                                            { icon: BarChart3, title: "Results", desc: "Data-backed operational performance." }
-                                        ].map((item, i) => (
-                                            <div key={i} className="flex gap-4">
-                                                <div className="shrink-0">
-                                                    <item.icon size={20} style={{ color: themeColor }} />
-                                                </div>
-                                                <div>
-                                                    <p className="font-inter text-xs sm:text-sm font-bold uppercase tracking-[0.1em]">{item.title}</p>
-                                                    <p className="font-inter text-[10px] sm:text-xs opacity-50 font-medium">{item.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+            {/* ── Mandate + CTA band ──────────────────────────────── */}
+            <section className="py-16 sm:py-24 lg:py-32">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div
+                        className="relative rounded-2xl sm:rounded-[3rem] overflow-hidden p-8 sm:p-14 lg:p-20"
+                        style={{ backgroundColor: foundSector.secondaryColor }}
+                    >
+                        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle at 88% 15%, ${themeColor}4D 0px, transparent 55%)` }}></div>
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                            <div className="space-y-6 sm:space-y-8">
+                                <div className="space-y-2">
+                                    <span className="font-inter text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em]" style={{ color: themeColor }}>Strategic Mandate</span>
+                                    <h2 className="font-display text-3xl sm:text-5xl text-platinum tracking-[0.03em] leading-[0.95]">Global Standards.<br />Local Impact.</h2>
                                 </div>
-
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
+                                    {[
+                                        { icon: Target, title: "Mission Driven", desc: "Aligned to national development goals." },
+                                        { icon: Trophy, title: "Excellence", desc: "Zero-compromise on quality and safety." },
+                                        { icon: BarChart3, title: "Results", desc: "Data-backed operational performance." },
+                                    ].map((item, i) => (
+                                        <div key={i} className="space-y-2">
+                                            <item.icon size={22} style={{ color: themeColor }} />
+                                            <p className="font-inter text-xs sm:text-sm font-bold uppercase tracking-[0.1em] text-platinum">{item.title}</p>
+                                            <p className="font-inter text-[11px] sm:text-xs text-platinum/50 font-medium leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="lg:justify-self-end w-full lg:max-w-sm bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-[2rem] p-7 sm:p-10 space-y-5">
+                                <h3 className="font-display text-2xl sm:text-3xl text-platinum tracking-[0.04em]">Engage this division</h3>
+                                <p className="font-inter text-platinum/60 text-sm font-medium leading-relaxed">Discuss partnerships, investment, and services with the {subsidiary.name} team.</p>
                                 <Link
-                                    href={`/contact?sector=${foundSector.title}&color=${encodeURIComponent(themeColor)}`}
-                                    className="w-full py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-bold uppercase tracking-[0.15em] text-[10px] sm:text-xs mt-8 sm:mt-12 transition-all shadow-xl hover:scale-[1.02] active:scale-95 flex items-center justify-center"
+                                    href={`/contact?sector=${encodeURIComponent(foundSector.title)}&color=${encodeURIComponent(themeColor)}`}
+                                    className="w-full inline-flex items-center justify-center gap-3 py-4 sm:py-5 rounded-xl sm:rounded-2xl font-inter font-bold uppercase tracking-[0.15em] text-[11px] sm:text-xs shadow-xl hover:scale-[1.02] active:scale-95 transition-transform"
                                     style={{ backgroundColor: themeColor, color: foundSector.secondaryColor }}
                                 >
-                                    Contact Business Office
+                                    Contact Office
+                                    <ArrowRight size={18} />
                                 </Link>
-                            </motion.div>
+                            </div>
                         </div>
                     </div>
                 </div>
