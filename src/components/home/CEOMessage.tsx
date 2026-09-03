@@ -26,7 +26,7 @@ const CEOMessage = () => {
                             <div className="absolute -inset-4 sm:-inset-6 border border-navy/10 rounded-2xl sm:rounded-[3rem] opacity-50 transition-transform group-hover:rotate-2"></div>
                             <div className="relative aspect-[4/5] bg-navy-light rounded-2xl sm:rounded-[2.5rem] overflow-hidden shadow-[0_30px_100px_-20px_rgba(27,45,61,0.3)] border border-navy/5">
                                 <Image
-                                    src="/images/ceo_founder.png"
+                                    src="/images/ceo_founder.jpg"
                                     alt="Isah Muhammed - Founder & CEO"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
