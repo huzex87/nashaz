@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Careers & Human Capital | NAHSAZ Group",
         description: "Explore career opportunities across the NAHSAZ Group.",
-        url: "https://nashazgroup.com/careers",
+        url: "https://nahsazgroup.com/careers",
     },
 };
 

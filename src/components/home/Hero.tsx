@@ -97,7 +97,7 @@ const Hero = () => {
                             <div className="absolute inset-0 bg-navy/10 rounded-2xl sm:rounded-[3rem] translate-x-4 translate-y-4 blur-3xl opacity-30"></div>
                             <div className="relative h-full w-full rounded-2xl sm:rounded-[2.5rem] overflow-hidden border border-navy/5 shadow-2xl group">
                                 <Image
-                                    src="/images/nashaz_hero_corporate_1772037556464.png"
+                                    src="/images/nahsaz_hero_corporate_1772037556464.png"
                                     alt="NAHSAZ Group Corporate Headquarters"
                                     fill
                                     className="object-cover transition-transform duration-1000 group-hover:scale-110"

@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             siteName: "NAHSAZ Group",
             images: [
                 {
-                    url: '/images/nashaz_sectors_overview_1772038030316.png',
+                    url: '/images/nahsaz_sectors_overview_1772038030316.png',
                     width: 1200,
                     height: 630,
                     alt: `${foundSubsidiary.name} - NAHSAZ Group Subsidiary`,

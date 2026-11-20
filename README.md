@@ -44,7 +44,7 @@ contact form degrades gracefully when email is not configured.
 | ----------------------- | --------------------------------------------------- |
 | `RESEND_API_KEY`        | Resend API key used to send contact-form emails     |
 | `RESEND_FROM`           | Verified "from" address (defaults to `onboarding@resend.dev`) |
-| `CORPORATE_RECEIVER`    | Inbox that receives inquiries (defaults to `info@nahsaz.group`) |
+| `CORPORATE_RECEIVER`    | Inbox that receives inquiries (defaults to `info@nahsazgroup.com`) |
 | `NEXT_PUBLIC_GA_ID`     | Google Analytics measurement ID (analytics load only when set) |
 
 ## Project Structure
