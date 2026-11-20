@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/admin', '/api'],
         },
-        sitemap: 'https://nahsazgroup.com/sitemap.xml',
+        sitemap: 'https://www.nahsazgroup.com/sitemap.xml',
     }
 }

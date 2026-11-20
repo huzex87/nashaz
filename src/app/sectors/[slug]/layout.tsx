@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: `${sector.title} Sector | NAHSAZ Group`,
             description: sector.fullDescription,
-            url: `https://nahsazgroup.com/sectors/${params.slug}`,
+            url: `https://www.nahsazgroup.com/sectors/${params.slug}`,
             siteName: "NAHSAZ Group",
             images: [
                 {

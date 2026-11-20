@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: `${foundSubsidiary.name} - ${parentSector.title} | NAHSAZ Group`,
             description: foundSubsidiary.longDescription || foundSubsidiary.description,
-            url: `https://nahsazgroup.com/subsidiaries/${params.slug}`,
+            url: `https://www.nahsazgroup.com/subsidiaries/${params.slug}`,
             siteName: "NAHSAZ Group",
             images: [
                 {
