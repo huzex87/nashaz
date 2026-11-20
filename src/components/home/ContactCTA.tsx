@@ -50,7 +50,7 @@ const ContactCTA = () => {
                                     <ArrowRight className="group-hover:translate-x-1 transition-transform" size={18} />
                                 </Link>
                                 <a
-                                    href="mailto:info@nashazgroup.com"
+                                    href="mailto:info@nahsazgroup.com"
                                     className="bg-white/5 text-platinum px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-xl sm:rounded-2xl font-inter font-semibold text-xs sm:text-sm transition-all flex items-center justify-center gap-3 border border-white/10 hover:bg-white/10 active:scale-95 tracking-wide backdrop-blur-md"
                                 >
                                     <Mail size={18} className="text-gold" />

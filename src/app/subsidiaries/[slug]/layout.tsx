@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: `${foundSubsidiary.name} - ${parentSector.title} | NAHSAZ Group`,
             description: foundSubsidiary.longDescription || foundSubsidiary.description,
-            url: `https://nahsazgroup.com/subsidiaries/${params.slug}`,
+            url: `https://www.nahsazgroup.com/subsidiaries/${params.slug}`,
             siteName: "NAHSAZ Group",
             images: [
                 {
-                    url: '/images/nashaz_sectors_overview_1772038030316.png',
+                    url: '/images/nahsaz_sectors_overview_1772038030316.png',
                     width: 1200,
                     height: 630,
                     alt: `${foundSubsidiary.name} - NAHSAZ Group Subsidiary`,

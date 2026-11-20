@@ -58,7 +58,7 @@ const Sectors = () => {
                         <div className="relative aspect-video lg:aspect-square rounded-2xl sm:rounded-[3rem] overflow-hidden border border-gold/15 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] bg-white/5 backdrop-blur-sm p-2 sm:p-4">
                             <div className="relative h-full w-full rounded-xl sm:rounded-[2rem] overflow-hidden group">
                                 <Image
-                                    src="/images/nashaz_sectors_overview_1772038030316.png"
+                                    src="/images/nahsaz_sectors_overview_1772038030316.png"
                                     alt="NAHSAZ Group Sector Montage"
                                     fill
                                     className="object-cover transition-transform duration-1000 group-hover:scale-110"

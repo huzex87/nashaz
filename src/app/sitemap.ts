@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { sectors } from "@/lib/data/sectors";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://nashazgroup.com';
+    const baseUrl = 'https://www.nahsazgroup.com';
 
     // Static Pages
     const staticPages = [

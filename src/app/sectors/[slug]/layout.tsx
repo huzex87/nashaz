@@ -16,11 +16,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         openGraph: {
             title: `${sector.title} Sector | NAHSAZ Group`,
             description: sector.fullDescription,
-            url: `https://nahsazgroup.com/sectors/${params.slug}`,
+            url: `https://www.nahsazgroup.com/sectors/${params.slug}`,
             siteName: "NAHSAZ Group",
             images: [
                 {
-                    url: '/images/nashaz_sectors_overview_1772038030316.png',
+                    url: '/images/nahsaz_sectors_overview_1772038030316.png',
                     width: 1200,
                     height: 630,
                     alt: `${sector.title} Sector - NAHSAZ Group`,

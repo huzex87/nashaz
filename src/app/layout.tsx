@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nashazgroup.com"),
+  metadataBase: new URL("https://www.nahsazgroup.com"),
   title: "NAHSAZ Group | Powering Commerce. Delivering Solutions.",
   description: "NAHSAZ Group is a diversified Nigerian conglomerate delivering integrated solutions across real estate, construction, healthcare, energy, agriculture, mining, logistics, automotive, and consulting services.",
   keywords: ["NAHSAZ Group", "Nigeria Conglomerate", "Real Estate Nigeria", "Construction Nigeria", "Healthcare Nigeria", "Energy Solutions Nigeria", "Isah Muhammed"],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NAHSAZ Group | Powering Commerce. Delivering Solutions.",
     description: "A diversified Nigerian conglomerate delivering integrated solutions across key sectors of the economy.",
-    url: "https://nashazgroup.com",
+    url: "https://www.nahsazgroup.com",
     siteName: "NAHSAZ Group",
     images: [
       {

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Strategic Contact | NAHSAZ Group",
         description: "Reach out to the NAHSAZ Group or individual subsidiaries for strategic partnerships, procurement, services, and corporate inquiries.",
-        url: "https://nashazgroup.com/contact",
+        url: "https://www.nahsazgroup.com/contact",
     },
 };
 

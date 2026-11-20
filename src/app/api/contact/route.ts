@@ -39,7 +39,7 @@ export async function POST(req: Request) {
 
         const { data, error } = await resend.emails.send({
             from: process.env.RESEND_FROM || 'onboarding@resend.dev',
-            to: process.env.CORPORATE_RECEIVER || 'info@nahsaz.group',
+            to: process.env.CORPORATE_RECEIVER || 'info@nahsazgroup.com',
             replyTo: email,
             subject: `New Corporate Inquiry: ${subject || 'General Inquiry'} - ${sector || 'Group'}`,
             html: `
